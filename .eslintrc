@@ -1,0 +1,42 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": ".",
+    "sourceType": "module"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    // prettier should always be the last
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint/eslint-plugin", "react", "react-hooks"],
+  "root": true,
+  "env": {},
+  "rules": {
+    // Typescript already catches {
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    // }
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "react-native",
+            "importNames": ["Text"],
+            "message": "Use Text from ~/components/Themed instead."
+          },
+          {
+            "name": "react-native",
+            "importNames": ["Button"],
+            "message": "Use Button from ~/components/Themed instead."
+          }
+        ]
+      }
+    ]
+  }
+}

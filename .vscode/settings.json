@@ -1,0 +1,7 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.tsx": "${capture}.stories.tsx, ${capture}.spec.ts",
+    "tailwind.config.js": "tailwind.config.*.js"
+  }
+}

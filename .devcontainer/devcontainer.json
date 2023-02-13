@@ -1,0 +1,26 @@
+{
+  "name": "Universal app",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "16"
+    }
+  },
+  "postCreateCommand": "corepack enable --install-directory ~/bin && corepack prepare && pnpm install",
+  "forwardPorts": [19000, 19006],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "byCedric.vscode-expo",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}

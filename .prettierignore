@@ -9,7 +9,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+pnpm-lock.yaml
 
+storyLoader.js
 .jest-test-results.json
 
 # macOS

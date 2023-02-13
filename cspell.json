@@ -1,0 +1,22 @@
+{
+  "files": [
+    "**",
+    "!pnpm-lock.yaml",
+    "!*.icns"
+  ],
+  "words": [
+    "datetimepicker",
+    "devcontainer",
+    "fullscreen",
+    "icns",
+    "nativewind",
+    "ondevice",
+    "postuninstall",
+    "rnstl",
+    "sbmodern",
+    "serde",
+    "storyshots",
+    "tailwindcss",
+    "tauri"
+  ]
+}
