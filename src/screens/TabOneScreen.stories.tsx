@@ -1,19 +1,10 @@
-import { LightTheme, DarkTheme } from '~/../.storybook/themes';
+import { withLightTheme, withDarkTheme } from '~/../.storybook/themes';
 import TabOneScreen from './TabOneScreen';
 
 export default {
-  title: TabOneScreen.name,
+  title: `screens/${TabOneScreen.name}`,
   component: TabOneScreen,
 };
 
-export const DefaultLight = () => (
-  <LightTheme>
-    <TabOneScreen />
-  </LightTheme>
-);
-
-export const DefaultDark = () => (
-  <DarkTheme>
-    <TabOneScreen />
-  </DarkTheme>
-);
+export const DefaultLight = withLightTheme(TabOneScreen);
+export const DefaultDark = withDarkTheme(TabOneScreen);

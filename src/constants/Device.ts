@@ -5,5 +5,7 @@ const window = Dimensions.get('window');
 export default {
   ...window,
   isSmall: window.width < 375,
-  OS: Platform.OS as 'ios' | 'android' | 'web',
-};
+  ios: Platform.OS === 'ios',
+  android: Platform.OS === 'android',
+  web: Platform.OS === 'web',
+} as const;

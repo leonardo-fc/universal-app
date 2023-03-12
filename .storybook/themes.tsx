@@ -1,18 +1,22 @@
 import { NativeWindStyleSheet } from 'nativewind';
 import { useEffect } from 'react';
 
-export function DarkTheme({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    NativeWindStyleSheet.setColorScheme('dark');
-  }, []);
+export function withDarkTheme(Component: () => JSX.Element) {
+  return () => {
+    useEffect(() => {
+      NativeWindStyleSheet.setColorScheme('dark');
+    }, []);
 
-  return <>{children}</>;
+    return <Component />;
+  };
 }
 
-export function LightTheme({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    NativeWindStyleSheet.setColorScheme('light');
-  }, []);
+export function withLightTheme(Component: () => JSX.Element) {
+  return () => {
+    useEffect(() => {
+      NativeWindStyleSheet.setColorScheme('light');
+    }, []);
 
-  return <>{children}</>;
+    return <Component />;
+  };
 }

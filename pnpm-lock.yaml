@@ -2,15 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': ^7.12.9
-  '@babel/eslint-parser': ^7.19.1
-  '@babel/plugin-proposal-async-do-expressions': ^7.18.6
-  '@babel/plugin-proposal-do-expressions': ^7.18.6
-  '@babel/plugin-syntax-async-do-expressions': ^7.18.6
-  '@babel/plugin-syntax-do-expressions': ^7.18.6
   '@babel/plugin-syntax-dynamic-import': ^7.8.3
   '@expo/ngrok': ^4.1.0
   '@expo/vector-icons': ^13.0.0
   '@expo/webpack-config': ^0.17.4
+  '@miblanchard/react-native-slider': ^2.3.0
   '@react-native-async-storage/async-storage': ^1.17.11
   '@react-native-community/datetimepicker': ^6.7.5
   '@react-native-community/slider': ^4.4.2
@@ -20,8 +16,6 @@ specifiers:
   '@storybook/addon-actions': ^6.5.16
   '@storybook/addon-controls': ^6.5.16
   '@storybook/addon-jest': ^6.5.16
-  '@storybook/addon-ondevice-actions': ^6.5.0-rc.5
-  '@storybook/addon-ondevice-controls': ^6.5.0-rc.5
   '@storybook/addon-storyshots': ^6.5.16
   '@storybook/react-native': ^6.5.0-rc.5
   '@storybook/react-native-server': ^6.5.0-rc.5
@@ -36,15 +30,18 @@ specifiers:
   babel-loader: ^8.3.0
   concurrently: ^7.6.0
   cspell: ^6.27.0
+  date-fns: ^2.29.3
   eslint: ^8.34.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
   expo: ~47.0.13
   expo-asset: ~8.7.0
+  expo-av: ~13.0.3
   expo-constants: ~14.0.2
   expo-font: ~11.0.1
   expo-linking: ~3.3.1
+  expo-navigation-bar: ~2.0.1
   expo-splash-screen: ~0.17.5
   expo-status-bar: ~1.4.2
   expo-system-ui: ~2.0.1
@@ -70,14 +67,18 @@ specifiers:
 
 dependencies:
   '@expo/vector-icons': 13.0.0
+  '@miblanchard/react-native-slider': 2.3.0_tj3nonr5gneraukzjkxpsiy7yu
   '@react-navigation/bottom-tabs': 6.5.5_mzpnoyhirmxo3ci6ibredhimgm
   '@react-navigation/native': 6.1.4_tj3nonr5gneraukzjkxpsiy7yu
   '@react-navigation/native-stack': 6.9.10_mzpnoyhirmxo3ci6ibredhimgm
+  date-fns: 2.29.3
   expo: 47.0.13_@babel+core@7.20.12
   expo-asset: 8.7.0_expo@47.0.13
+  expo-av: 13.0.3_expo@47.0.13
   expo-constants: 14.0.2_expo@47.0.13
   expo-font: 11.0.1_expo@47.0.13
   expo-linking: 3.3.1_expo@47.0.13
+  expo-navigation-bar: 2.0.1_expo@47.0.13
   expo-splash-screen: 0.17.5_expo@47.0.13
   expo-status-bar: 1.4.2
   expo-system-ui: 2.0.1_expo@47.0.13
@@ -91,11 +92,6 @@ dependencies:
 
 devDependencies:
   '@babel/core': 7.20.12
-  '@babel/eslint-parser': 7.19.1_ydmbqfus77qykiqxhcwsorsqbq
-  '@babel/plugin-proposal-async-do-expressions': 7.18.6_@babel+core@7.20.12
-  '@babel/plugin-proposal-do-expressions': 7.18.6_@babel+core@7.20.12
-  '@babel/plugin-syntax-async-do-expressions': 7.18.6_@babel+core@7.20.12
-  '@babel/plugin-syntax-do-expressions': 7.18.6_@babel+core@7.20.12
   '@babel/plugin-syntax-dynamic-import': 7.8.3_@babel+core@7.20.12
   '@expo/ngrok': 4.1.0
   '@expo/webpack-config': 0.17.4_dzqxxlqdj3ztnr56epi2uakck4
@@ -105,8 +101,6 @@ devDependencies:
   '@storybook/addon-actions': 6.5.16_ef5jwxihqo6n7gxfmzogljlgcm
   '@storybook/addon-controls': 6.5.16_gkcadi7dihubg6zewuhknop3le
   '@storybook/addon-jest': 6.5.16_ef5jwxihqo6n7gxfmzogljlgcm
-  '@storybook/addon-ondevice-actions': 6.5.0-rc.5_33qkzjw5xyjs4xxvhzsxvmany4
-  '@storybook/addon-ondevice-controls': 6.5.0-rc.5_svf7l7emjiafcyzft452xajm6a
   '@storybook/addon-storyshots': 6.5.16_mehnuji6xk6og7hsq335lahsg4
   '@storybook/react-native': 6.5.0-rc.5_jpavgvdz3ts7tzarpnmrza5gfu
   '@storybook/react-native-server': 6.5.0-rc.5_g4zeifcvczrncylmmdtiudvie4
@@ -230,20 +224,6 @@ packages:
       source-map: 0.5.7
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/eslint-parser/7.19.1_ydmbqfus77qykiqxhcwsorsqbq:
-    resolution: {integrity: sha512-AqNf2QWt1rtu2/1rLswy6CDP7H9Oh3mMhk177Y67Rg8d7RD9WfOLLv8CGn6tisFvS2htm86yIe1yLF6I1UDaGQ==}
-    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
-    peerDependencies:
-      '@babel/core': '>=7.11.0'
-      eslint: ^7.5.0 || ^8.0.0
-    dependencies:
-      '@babel/core': 7.20.12
-      '@nicolo-ribaudo/eslint-scope-5-internals': 5.1.1-v1
-      eslint: 8.34.0
-      eslint-visitor-keys: 2.1.0
-      semver: 6.3.0
     dev: true
 
   /@babel/generator/7.20.14:
@@ -518,18 +498,6 @@ packages:
       '@babel/helper-skip-transparent-expression-wrappers': 7.20.0
       '@babel/plugin-proposal-optional-chaining': 7.20.7_@babel+core@7.20.12
 
-  /@babel/plugin-proposal-async-do-expressions/7.18.6_@babel+core@7.20.12:
-    resolution: {integrity: sha512-ptV7n23Rks40JioBVMA78p3I/IKThTLY8uGtERiBg8yZuySWW6Q2MiycxKKjrVfthjdY1UUvkS6e8UcvS7hJJw==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.13.0
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/helper-hoist-variables': 7.18.6
-      '@babel/helper-plugin-utils': 7.20.2
-      '@babel/plugin-syntax-async-do-expressions': 7.18.6_@babel+core@7.20.12
-    dev: true
-
   /@babel/plugin-proposal-async-generator-functions/7.20.7_@babel+core@7.20.12:
     resolution: {integrity: sha512-xMbiLsn/8RK7Wq7VeVytytS2L6qE69bXPB10YCmMdDZbKF4okCqY74pI/jJQ/8U0b/F6NrT2+14b8/P9/3AMGA==}
     engines: {node: '>=6.9.0'}
@@ -583,17 +551,6 @@ packages:
       '@babel/plugin-syntax-decorators': 7.19.0_@babel+core@7.20.12
     transitivePeerDependencies:
       - supports-color
-
-  /@babel/plugin-proposal-do-expressions/7.18.6_@babel+core@7.20.12:
-    resolution: {integrity: sha512-ddToGCONJhCuL+l4FhtGnKl5ZYCj9fDVFiqiCdQDpeIbVn/NvMeSib+7T1/rk08jRafae4qNiP8OnJyuqlsuYA==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.20.2
-      '@babel/plugin-syntax-do-expressions': 7.18.6_@babel+core@7.20.12
-    dev: true
 
   /@babel/plugin-proposal-dynamic-import/7.18.6_@babel+core@7.20.12:
     resolution: {integrity: sha512-1auuwmK+Rz13SJj36R+jqFPMJWyKEDd7lLSdOj4oJK0UTgGueSAtkrCvz9ewmgyU/P941Rv2fQwZJN8s6QruXw==}
@@ -746,16 +703,6 @@ packages:
       '@babel/helper-create-regexp-features-plugin': 7.20.5_@babel+core@7.20.12
       '@babel/helper-plugin-utils': 7.20.2
 
-  /@babel/plugin-syntax-async-do-expressions/7.18.6_@babel+core@7.20.12:
-    resolution: {integrity: sha512-TVRkSEINXsR3/3Fm7PNm1V9ARNaak+/Q3BPnQGHaNmwcr8GJRfXh4UXGdj3Tk9pbMJEeEu7mATZYO+t3QIM8fg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.20.2
-    dev: true
-
   /@babel/plugin-syntax-async-generators/7.8.4_@babel+core@7.20.12:
     resolution: {integrity: sha512-tycmZxkGfZaxhMRbXlPXuVFpdWlXpir2W4AMhSJgRKzk/eDlIXOhb2LHWoLpDF7TEHylV5zNhykX6KAgHJmTNw==}
     peerDependencies:
@@ -798,16 +745,6 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@babel/helper-plugin-utils': 7.20.2
-
-  /@babel/plugin-syntax-do-expressions/7.18.6_@babel+core@7.20.12:
-    resolution: {integrity: sha512-kTogvOsjBTVOSZtkkziiXB5hwGXqwhq2gBXDaiWVruRLDT7C2GqfbsMnicHJ7ePq2GE8UJeWS34YbNP6yDhwUA==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/helper-plugin-utils': 7.20.2
-    dev: true
 
   /@babel/plugin-syntax-dynamic-import/7.8.3_@babel+core@7.20.12:
     resolution: {integrity: sha512-5gdGbFon+PszYzqs83S3E5mpi7/y/8M9eC90MRTZfduQOYW76ig6SOSPNe41IG5LoP3FGBn2N0RjVDSQiS94kQ==}
@@ -1937,18 +1874,6 @@ packages:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
     dev: true
 
-  /@emotion/native/10.0.27_tj3nonr5gneraukzjkxpsiy7yu:
-    resolution: {integrity: sha512-3qxR2XFizGfABKKbX9kAYc0PHhKuCEuyxshoq3TaMEbi9asWHdQVChg32ULpblm4XAf9oxaitAU7J9SfdwFxtw==}
-    peerDependencies:
-      react-native: '>=0.14.0 <1'
-    dependencies:
-      '@emotion/primitives-core': 10.0.27_react@18.1.0
-      react-native: 0.70.5_7vw2fevm7cxfkwynop5qx4c5l4
-    transitivePeerDependencies:
-      - '@emotion/core'
-      - react
-    dev: true
-
   /@emotion/native/10.0.27_ziyr2q7jf3orpjb6chqnppa24e:
     resolution: {integrity: sha512-3qxR2XFizGfABKKbX9kAYc0PHhKuCEuyxshoq3TaMEbi9asWHdQVChg32ULpblm4XAf9oxaitAU7J9SfdwFxtw==}
     peerDependencies:
@@ -1959,16 +1884,6 @@ packages:
     transitivePeerDependencies:
       - '@emotion/core'
       - react
-    dev: true
-
-  /@emotion/primitives-core/10.0.27_react@18.1.0:
-    resolution: {integrity: sha512-fRBEDNPSFFOrBJ0OcheuElayrNTNdLF9DzMxtL0sFgsCFvvadlzwJHhJMSwEJuxwARm9GhVLr1p8G8JGkK98lQ==}
-    peerDependencies:
-      '@emotion/core': ^10.0.27
-      react: '>=16.3.0'
-    dependencies:
-      css-to-react-native: 2.3.2
-      react: 18.1.0
     dev: true
 
   /@emotion/primitives-core/10.0.27_un5bmb2woybmdwnmb6pwmq2yoy:
@@ -3131,18 +3046,22 @@ packages:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
     dev: true
 
+  /@miblanchard/react-native-slider/2.3.0_tj3nonr5gneraukzjkxpsiy7yu:
+    resolution: {integrity: sha512-KiAESUOP69eft8U43iD6xeX+s9ZetwiY/cXkGq1xL4nywb37cVnrxQeSi3+rAix8aHeJwXXeyPZkxmZQe0Hjbw==}
+    peerDependencies:
+      react: '>=16.8'
+      react-native: '>=0.59'
+    dependencies:
+      react: 18.1.0
+      react-native: 0.70.5_7vw2fevm7cxfkwynop5qx4c5l4
+    dev: false
+
   /@mrmlnc/readdir-enhanced/2.2.1:
     resolution: {integrity: sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==}
     engines: {node: '>=4'}
     dependencies:
       call-me-maybe: 1.0.2
       glob-to-regexp: 0.3.0
-    dev: true
-
-  /@nicolo-ribaudo/eslint-scope-5-internals/5.1.1-v1:
-    resolution: {integrity: sha512-54/JRvkLIzzDWshCWfuhadfrfZVPiElY8Fcgmg1HroEly/EDSszzhBAsarCux+D/kOslTRquNzuyGSmUSTTHGg==}
-    dependencies:
-      eslint-scope: 5.1.1
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -3623,52 +3542,6 @@ packages:
       react-sizeme: 3.0.2
       regenerator-runtime: 0.13.11
       upath: 1.2.0
-    dev: true
-
-  /@storybook/addon-ondevice-actions/6.5.0-rc.5_33qkzjw5xyjs4xxvhzsxvmany4:
-    resolution: {integrity: sha512-qZh3Aqn+fKEnp70IERV3d4vM1xzni8bB8OqdzVSLuIDDLpIQ+guCpNRbRPthiqmrXvU25CAhYeGa+jph768PAw==}
-    peerDependencies:
-      '@storybook/addon-actions': ^6.5.14
-      react: '*'
-      react-native: '*'
-    dependencies:
-      '@storybook/addon-actions': 6.5.16_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/addons': 6.5.16_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/core-events': 6.5.16
-      fast-deep-equal: 2.0.1
-      react: 18.1.0
-      react-native: 0.70.5_7vw2fevm7cxfkwynop5qx4c5l4
-    transitivePeerDependencies:
-      - react-dom
-    dev: true
-
-  /@storybook/addon-ondevice-controls/6.5.0-rc.5_svf7l7emjiafcyzft452xajm6a:
-    resolution: {integrity: sha512-0CT4WO8PBJgnjrElg9Jjv4FxVLjkxJSd66i8nsozYMz3suDPXJx8btsntBk6G6GbIdf4hotD/B+MyDK/osbUwQ==}
-    peerDependencies:
-      '@react-native-community/datetimepicker': '*'
-      '@react-native-community/slider': '*'
-      '@storybook/addon-controls': ^6.5.14
-      react: '*'
-      react-native: '*'
-    dependencies:
-      '@emotion/native': 10.0.27_tj3nonr5gneraukzjkxpsiy7yu
-      '@react-native-community/datetimepicker': 6.7.5
-      '@react-native-community/slider': 4.4.2
-      '@storybook/addon-controls': 6.5.16_gkcadi7dihubg6zewuhknop3le
-      '@storybook/addons': 6.5.16_ef5jwxihqo6n7gxfmzogljlgcm
-      '@storybook/client-logger': 6.5.16
-      '@storybook/core-events': 6.5.16
-      core-js: 3.28.0
-      deep-equal: 1.1.1
-      prop-types: 15.8.1
-      react: 18.1.0
-      react-native: 0.70.5_7vw2fevm7cxfkwynop5qx4c5l4
-      react-native-modal-datetime-picker: 14.0.1_4h3eoeyghfek2xz3htazhalnau
-      react-native-modal-selector: 2.1.2
-      tinycolor2: 1.6.0
-    transitivePeerDependencies:
-      - '@emotion/core'
-      - react-dom
     dev: true
 
   /@storybook/addon-storyshots/6.5.16_mehnuji6xk6og7hsq335lahsg4:
@@ -8207,7 +8080,6 @@ packages:
   /date-fns/2.29.3:
     resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
-    dev: true
 
   /dayjs/1.11.7:
     resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
@@ -9270,6 +9142,14 @@ packages:
       - expo
       - supports-color
 
+  /expo-av/13.0.3_expo@47.0.13:
+    resolution: {integrity: sha512-9SpXOjY2MUK+jCIL68EUro/aHBlbZ3B4cY1nRr2aTPfv/dLD3bXRZNTTtSwOgsHbuKO6XwjHgCoYbd9T0GcE4A==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 47.0.13_@babel+core@7.20.12
+    dev: false
+
   /expo-constants/14.0.2_expo@47.0.13:
     resolution: {integrity: sha512-wzV3nrzTXTI8yG0tfas3fnqCfKV6YE+1GphEREyVDAShEB6mBInX1b6HgtpHFy2wOtnml+lPVmTCeGtjjLnZhA==}
     peerDependencies:
@@ -9341,6 +9221,18 @@ packages:
     dependencies:
       compare-versions: 3.6.0
       invariant: 2.2.4
+
+  /expo-navigation-bar/2.0.1_expo@47.0.13:
+    resolution: {integrity: sha512-lR+77eOJ4unrDVtrOHRK95c2QGsbRlYt2PmAST9Y+AFEiqVsYWg2JZTp2f2XZxe/10i8jqgSHBMRm7I7w2DcBA==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      '@react-native/normalize-color': 2.1.0
+      debug: 4.3.4
+      expo: 47.0.13_@babel+core@7.20.12
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /expo-pwa/0.0.124_expo@47.0.13:
     resolution: {integrity: sha512-hYvQQhxATNTivWSRc9nrd1WVYJJnBG8P/SVrJ4PPu0pmsS7ZIvWt981IXYG461y9UWnTbXdZEG4UOt0Thak1Gg==}
@@ -9544,10 +9436,6 @@ packages:
       to-regex: 3.0.2
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /fast-deep-equal/2.0.1:
-    resolution: {integrity: sha512-bCK/2Z4zLidyB4ReuIsvALH6w31YfAQDmXMqMx6FyfHqvBxtjC0eRumeSu4Bs3XtXwpyIywtSTrVT99BxY1f9w==}
     dev: true
 
   /fast-deep-equal/3.1.3:
@@ -15213,23 +15101,6 @@ packages:
   /react-native-gradle-plugin/0.70.3:
     resolution: {integrity: sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==}
 
-  /react-native-modal-datetime-picker/14.0.1_4h3eoeyghfek2xz3htazhalnau:
-    resolution: {integrity: sha512-wQt4Pjxt2jiTsVhLMG0E7WrRTYBEQx2d/nUrFVCbRqJ7lrXocXaT5UZsyMpV93TnKcyut62OprbO88wYq/vh0g==}
-    peerDependencies:
-      '@react-native-community/datetimepicker': '>=3.0.0'
-      react-native: '>=0.65.0'
-    dependencies:
-      '@react-native-community/datetimepicker': 6.7.5
-      prop-types: 15.8.1
-      react-native: 0.70.5_7vw2fevm7cxfkwynop5qx4c5l4
-    dev: true
-
-  /react-native-modal-selector/2.1.2:
-    resolution: {integrity: sha512-+Cvoz/yNUFmfIkJ7xkmlLR2nhJOUhx00S6BPqp2Ruy8LkmaiNr7WMZ4BzsgzylyEgZ84Q+42HQ0v0QzJYobviA==}
-    dependencies:
-      prop-types: 15.8.1
-    dev: true
-
   /react-native-safe-area-context/4.4.1_tj3nonr5gneraukzjkxpsiy7yu:
     resolution: {integrity: sha512-N9XTjiuD73ZpVlejHrUWIFZc+6Z14co1K/p1IFMkImU7+avD69F3y+lhkqA2hN/+vljdZrBSiOwXPkuo43nFQA==}
     peerDependencies:
@@ -17032,10 +16903,6 @@ packages:
 
   /timsort/0.3.0:
     resolution: {integrity: sha512-qsdtZH+vMoCARQtyod4imc2nIJwg9Cc7lPRrw9CzF8ZKR0khdr8+2nX80PBhET3tcyTtJDxAffGh2rXH4tyU8A==}
-    dev: true
-
-  /tinycolor2/1.6.0:
-    resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
     dev: true
 
   /tmp/0.0.33:

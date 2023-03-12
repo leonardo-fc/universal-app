@@ -11,9 +11,12 @@ import {
   TextProps,
   Button as DefaultButton,
   ButtonProps,
+  TouchableOpacity,
+  ViewStyle,
 } from 'react-native';
 import MaterialCommunityIcon from '@expo/vector-icons/MaterialCommunityIcons';
 import { IconProps } from '@expo/vector-icons/build/createIconSet';
+import { Slider as DefaultSlider } from '@miblanchard/react-native-slider';
 
 export function Background(props: ViewProps) {
   return <View className='bg-white dark:bg-black' {...props} />;
@@ -43,4 +46,31 @@ export function Icon(props: IconProps<MaterialCommunityIcons>) {
 // className is only working in wrappers of icon (tested in nativewind v2)
 function _Icon(props: IconProps<MaterialCommunityIcons>) {
   return <MaterialCommunityIcon {...props} />;
+}
+
+export function IconButton({
+  onPress,
+  style,
+  iconClassName,
+  ...props
+}: IconProps<MaterialCommunityIcons> & { iconClassName?: string }) {
+  return (
+    <TouchableOpacity
+      className='aspect-square min-h-[32] min-w-[32] items-center justify-center'
+      style={style}
+      onPress={onPress}>
+      <Icon className={iconClassName} {...props} />
+    </TouchableOpacity>
+  );
+}
+
+type SliderDefaultProps = Partial<typeof DefaultSlider.defaultProps>;
+type SliderProps = Omit<DefaultSlider['props'], keyof SliderDefaultProps> &
+  Partial<Pick<DefaultSlider['props'], keyof SliderDefaultProps>>;
+
+export function Slider({
+  style,
+  ...props
+}: SliderProps & { className?: string; style?: ViewStyle }) {
+  return <DefaultSlider containerStyle={style} {...props} />;
 }

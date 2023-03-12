@@ -3,6 +3,7 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
+import { useEffect } from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -13,23 +14,29 @@ import {
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useColorScheme } from 'nativewind';
 import { ColorSchemeName } from 'nativewind/dist/style-sheet/color-scheme';
-import * as React from 'react';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import Device from '~/constants/Device';
 
 export default function Navigation({
   colorScheme,
 }: {
   colorScheme: ColorSchemeName;
 }) {
+  const theme = colorScheme === 'dark' ? DarkTheme : DefaultTheme;
+
+  useEffect(() => {
+    if (Device.android)
+      NavigationBar.setBackgroundColorAsync(theme.colors.card);
+  }, [theme]);
+
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <NavigationContainer linking={LinkingConfiguration} theme={theme}>
       <RootNavigator />
     </NavigationContainer>
   );

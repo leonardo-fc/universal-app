@@ -18,11 +18,6 @@ global.STORIES = [
   },
 ];
 
-import "@storybook/addon-ondevice-controls/register";
-import "@storybook/addon-ondevice-actions/register";
-
-import { argsEnhancers } from "@storybook/addon-actions/dist/modern/preset/addArgs";
-
 import { decorators, parameters } from "./preview";
 
 if (decorators) {
@@ -41,12 +36,9 @@ if (parameters) {
   addParameters(parameters);
 }
 
-try {
-  argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
-} catch {}
-
 const getStories = () => {
   return {
+    "./src/components/PlayBar.stories.tsx": require("../src/components/PlayBar.stories.tsx"),
     "./src/screens/TabOneScreen.stories.tsx": require("../src/screens/TabOneScreen.stories.tsx"),
   };
 };
