@@ -1,0 +1,1610 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components/PlayBar Long Name Dark 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#000",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#18181b",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#fff",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Nobody Likes The Opening Band
+        </Text>
+         - 
+        I DONT KNOW HOW BUT THEY FOUND ME
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          0:00 / 0:00
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text />
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={0}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Long Name Light 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#f4f4f5",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#000",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Nobody Likes The Opening Band
+        </Text>
+         - 
+        I DONT KNOW HOW BUT THEY FOUND ME
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          0:00 / 0:00
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": undefined,
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰐊
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={0}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Playing Dark 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#000",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#18181b",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#fff",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Creep
+        </Text>
+         - 
+        Radiohead
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          0:57 / 3:58
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": "#fff",
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰏤
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={57000}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Playing Light 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#f4f4f5",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#000",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Creep
+        </Text>
+         - 
+        Radiohead
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          0:57 / 3:58
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": undefined,
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰏤
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={57000}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Replay Dark 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#000",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#18181b",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#fff",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Creep
+        </Text>
+         - 
+        Radiohead
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          3:58 / 3:58
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": "#fff",
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰑙
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={238000}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Replay Light 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#fff",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#f4f4f5",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#000",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "fontWeight": "700",
+            }
+          }
+        >
+          Creep
+        </Text>
+         - 
+        Radiohead
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#000",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          3:58 / 3:58
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": undefined,
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰑙
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={238000}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Storyshots components/PlayBar Short Name Dark 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#000",
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "paddingTop": 40,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#18181b",
+        "bottom": 0,
+        "paddingBottom": 24,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+        "paddingTop": 12,
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        numberOfLines={2}
+        style={
+          {
+            "color": "#fff",
+            "flexShrink": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontWeight": "700",
+            }
+          }
+        >
+          DOTAB
+        </Text>
+         - 
+        Bear Ghost
+      </Text>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "textAlign": "right",
+              "width": 96,
+            }
+          }
+        >
+          0:00 / 0:00
+        </Text>
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "aspectRatio": 1,
+              "justifyContent": "center",
+              "marginLeft": 8,
+              "minHeight": 32,
+              "minWidth": 32,
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            selectable={false}
+            style={
+              {
+                "color": "#fff",
+                "fontFamily": "material-community",
+                "fontSize": 24,
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+                "lineHeight": 32,
+              }
+            }
+          >
+            󰐊
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      animationType="timing"
+      onLayout={[Function]}
+      onValueChange={[Function]}
+      style={
+        {
+          "flexGrow": 1,
+          "height": 40,
+          "justifyContent": "center",
+          "marginRight": 12,
+        }
+      }
+      trackClickable={true}
+      trackMarks={[]}
+      value={0}
+    >
+      <View
+        onLayout={[Function]}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "rgba(64,64,64,0.5)",
+            "borderRadius": 2,
+            "height": 4,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        renderToHardwareTextureAndroid={true}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 2,
+            "height": 4,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "width": 0,
+          }
+        }
+      />
+      <View
+        collapsable={false}
+        onLayout={[Function]}
+        style={
+          {
+            "backgroundColor": "#2196f3",
+            "borderRadius": 10,
+            "height": 20,
+            "opacity": 0,
+            "position": "absolute",
+            "transform": [
+              {
+                "translateX": 0,
+              },
+              {
+                "translateY": 0,
+              },
+            ],
+            "width": 0,
+          }
+        }
+      />
+      <View
+        onMoveShouldSetResponder={[Function]}
+        onMoveShouldSetResponderCapture={[Function]}
+        onResponderEnd={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderStart={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        style={
+          {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "marginBottom": -20,
+            "marginLeft": -20,
+            "marginRight": -20,
+            "marginTop": -20,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

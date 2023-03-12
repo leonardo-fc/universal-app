@@ -1,9 +1,5 @@
 {
-  "files": [
-    "**",
-    "!pnpm-lock.yaml",
-    "!*.icns"
-  ],
+  "files": ["**", "!pnpm-lock.yaml", "!*.mp3", "!*.icns", "!*.snap"],
   "words": [
     "datetimepicker",
     "devcontainer",

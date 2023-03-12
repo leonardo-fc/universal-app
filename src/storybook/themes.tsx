@@ -2,7 +2,7 @@ import { NativeWindStyleSheet } from 'nativewind';
 import { useEffect } from 'react';
 
 export function withDarkTheme(Component: () => JSX.Element) {
-  return () => {
+  return function DarkThemeProvider() {
     useEffect(() => {
       NativeWindStyleSheet.setColorScheme('dark');
     }, []);
@@ -12,7 +12,7 @@ export function withDarkTheme(Component: () => JSX.Element) {
 }
 
 export function withLightTheme(Component: () => JSX.Element) {
-  return () => {
+  return function LightThemeProvider() {
     useEffect(() => {
       NativeWindStyleSheet.setColorScheme('light');
     }, []);

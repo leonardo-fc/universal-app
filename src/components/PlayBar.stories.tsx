@@ -1,4 +1,4 @@
-import { withLightTheme, withDarkTheme } from '~/../.storybook/themes';
+import { withLightTheme, withDarkTheme } from '~/storybook/themes';
 import { minute, second } from '~/constants/time';
 import PlayBar, { DumbPlayBar } from './PlayBar';
 

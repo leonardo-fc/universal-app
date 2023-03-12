@@ -11,8 +11,8 @@ npm-debug.*
 web-build/
 pnpm-lock.yaml
 
-storyLoader.js
-.jest-test-results.json
+tests/.results.json
+storybook.requires.js
 
 # macOS
 .DS_Store

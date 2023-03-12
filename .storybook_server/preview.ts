@@ -1,6 +1,6 @@
 import { withTests } from '@storybook/addon-jest';
 
-import results from '../.jest-test-results.json';
+import results from '../tests/.results.json';
 
 export const decorators = [withTests({ results })];
 export const parameters = {};

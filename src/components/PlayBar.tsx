@@ -96,7 +96,7 @@ function useSound(source: AVPlaybackSource) {
     isPlaying: status.isPlaying,
     isFinish,
     position: positionToDisplay,
-    duration: status.durationMillis,
+    duration: Number.isNaN(status.durationMillis) ? 0 : status.durationMillis, // initially returns NaN on web
     onPlay,
     onSlidingStart,
     onSlidingComplete,

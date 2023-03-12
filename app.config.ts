@@ -1,10 +1,10 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
-const isStory = process.env.STORY_MODE === 'true';
-
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  entryPoint: isStory ? './.storybook' : './src/App',
+  extra: {
+    storyMode: process.env.STORY_MODE,
+  },
   name: 'universal-app',
   slug: 'universal-app',
   version: '1.0.0',
@@ -12,7 +12,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './src/assets/images/icon.png',
   scheme: 'demo',
   userInterfaceStyle: 'automatic',
-  jsEngine: 'hermes',
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'contain',
