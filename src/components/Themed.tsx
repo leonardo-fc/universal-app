@@ -56,7 +56,7 @@ export function IconButton({
 }: IconProps<MaterialCommunityIcons> & { iconClassName?: string }) {
   return (
     <TouchableOpacity
-      className='aspect-square min-h-[32] min-w-[32] items-center justify-center'
+      className='aspect-square min-h-[32px] min-w-[32px] items-center justify-center'
       style={style}
       onPress={onPress}>
       <Icon className={iconClassName} {...props} />
