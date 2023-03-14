@@ -4,7 +4,6 @@
  *
  */
 import { useEffect } from 'react';
-import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   NavigationContainer,
@@ -16,12 +15,13 @@ import { useColorScheme } from 'nativewind';
 import { ColorSchemeName } from 'nativewind/dist/style-sheet/color-scheme';
 import * as NavigationBar from 'expo-navigation-bar';
 
-import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { RootStackParamList, RootTabParamList } from '../types';
+import NotFoundScreen from '~/screens/NotFoundScreen';
+import TabOneScreen from '~/screens/TabOneScreen';
+import TabTwoScreen from '~/screens/TabTwoScreen';
+import { RootStackParamList, RootTabParamList } from '~/types';
 import LinkingConfiguration from './LinkingConfiguration';
 import Device from '~/constants/Device';
+import { Icon } from '~/components/Themed';
 
 export default function Navigation({
   colorScheme,
@@ -84,28 +84,25 @@ function BottomTabNavigator() {
         name='TabOne'
         component={TabOneScreen}
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          title: 'Home',
+          tabBarIcon: createTabBarIcon('home'),
         }}
       />
       <BottomTab.Screen
         name='TabTwo'
         component={TabTwoScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name='code' color={color} />,
+          title: 'Profile',
+          tabBarIcon: createTabBarIcon('account'),
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+function createTabBarIcon(name: React.ComponentProps<typeof Icon>['name']) {
+  const TabBarIcon = ({ color }: { color: string }) => (
+    <Icon name={name} color={color} className='mb-[-3px] text-3xl' />
+  );
+  return TabBarIcon;
 }
