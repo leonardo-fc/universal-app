@@ -23,6 +23,7 @@ specifiers:
   '@storybook/react-native': ^6.5.0-rc.5
   '@storybook/react-native-server': ^6.5.0-rc.5
   '@tauri-apps/cli': ^1.2.3
+  '@testing-library/react-native': ^11.5.4
   '@types/jest': ^29.4.0
   '@types/react': ~18.0.28
   '@types/react-test-renderer': ^18.0.0
@@ -110,6 +111,7 @@ devDependencies:
   '@storybook/react-native': 6.5.0-rc.5_6qnn45s4jpflzb6gzqtqhk7ifi
   '@storybook/react-native-server': 6.5.0-rc.5_ky6cnrmzhq55kem2lqrsufovxi
   '@tauri-apps/cli': 1.2.3
+  '@testing-library/react-native': 11.5.4_enn7b6m45c7p5iyv6luw4eqwdi
   '@types/jest': 29.4.0
   '@types/react': 18.0.28
   '@types/react-test-renderer': 18.0.0
@@ -4775,6 +4777,24 @@ packages:
       '@tauri-apps/cli-linux-x64-musl': 1.2.3
       '@tauri-apps/cli-win32-ia32-msvc': 1.2.3
       '@tauri-apps/cli-win32-x64-msvc': 1.2.3
+    dev: true
+
+  /@testing-library/react-native/11.5.4_enn7b6m45c7p5iyv6luw4eqwdi:
+    resolution: {integrity: sha512-6DRzMHqili5pp1JRm7fh80SAP48aR25b37gohlLoKbqGBpDw8BbZTad7Luzktm9MU5DQUm7xyzg07Z1CyveVFA==}
+    peerDependencies:
+      jest: '>=28.0.0'
+      react: '>=16.8.0'
+      react-native: '>=0.59'
+      react-test-renderer: '>=16.8.0'
+    peerDependenciesMeta:
+      jest:
+        optional: true
+    dependencies:
+      jest: 29.5.0
+      pretty-format: 29.5.0
+      react: 18.2.0
+      react-native: 0.71.3_q2tyk3gci27qk4qoatek53e4vi
+      react-test-renderer: 18.2.0_react@18.2.0
     dev: true
 
   /@tootallnate/once/2.0.0:
