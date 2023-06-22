@@ -1,14 +1,14 @@
 import { readFile, writeFile, rm } from 'fs/promises';
 
 Promise.all([
-  // webpack v4 throws an error on node v18, so force @storybook/react-native-server to use webpack v5
+  /* // webpack v4 throws an error on node v18, so force @storybook/react-native-server to use webpack v5
   replace({
     path: './node_modules/@storybook/react-native-server/dist/server/options.js',
     oldLine: '@storybook/manager-webpack4',
     newline: '@storybook/manager-webpack5',
-  }),
+  }), */
 
-  // @storybook/addon-storyshots uses global.__STORYBOOK_STORY_STORE__.initializationPromise
+  /* // @storybook/addon-storyshots uses global.__STORYBOOK_STORY_STORE__.initializationPromise
   replace({
     path: './node_modules/@storybook/react-native/dist/index.js',
     oldLine: `const { clientApi, configure, view } = start();
@@ -16,7 +16,7 @@ export { configure };`,
     newline: `const { clientApi, configure, view } = start();
 global.__STORYBOOK_STORY_STORE__ = { initializationPromise: clientApi.storyStore?.initializationPromise };
 export { configure };`,
-  }),
+  }), */
 
   // Force @storybook/addon-storyshots v6 to use react-test-renderer v18
   rm(

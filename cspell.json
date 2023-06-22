@@ -1,5 +1,11 @@
 {
-  "files": ["**", "!pnpm-lock.yaml", "!*.mp3", "!*.icns", "!*.snap"],
+  "files": [
+    "**",
+    "!pnpm-lock.yaml",
+    "!*.mp3",
+    "!*.icns",
+    "!*.snap"
+  ],
   "words": [
     "datetimepicker",
     "devcontainer",
@@ -10,6 +16,7 @@
     "nativewind",
     "ondevice",
     "postuninstall",
+    "Pressable",
     "rnstl",
     "sbmodern",
     "serde",

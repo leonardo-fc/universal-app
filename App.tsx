@@ -5,4 +5,4 @@ const isStoryMode = Constants.expoConfig?.extra?.storyMode === 'true';
 
 export default isStoryMode
   ? require('./.storybook_ondevice').default
-  : require('./src/App').default;
+  : require('./src/screens/App').default;

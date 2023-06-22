@@ -10,8 +10,5 @@ npm-debug.*
 *.orig.*
 web-build/
 
-tests/.results.json
-storybook.requires.js
-
 # macOS
 .DS_Store

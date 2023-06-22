@@ -1,33 +1,30 @@
 import { useState, useEffect, useRef } from 'react';
 import { View } from 'react-native';
 import { Audio, AVPlaybackSource, AVPlaybackStatus } from 'expo-av';
-import {
-  Background,
-  IconButton,
-  Text,
-  Slider,
-  Button,
-} from '~/components/Themed';
+import { Background, IconButton, Text, Slider } from '~/components/Themed';
 import { lightFormat } from 'date-fns';
 
-export default function PlayBar() {
-  const sound = useSound(
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    require('~/assets/sounds/valley-sunset.mp3'),
-  );
+type Song = {
+  source: AVPlaybackSource;
+  songName: string;
+  authorName: string;
+};
 
-  if (!sound.isLoaded) return <Button onPress={sound.onPlay} title='Load' />;
+export default function PlayBar({ song }: { song?: Song }) {
+  const sound = useSound(song?.source);
+
+  if (!song || !sound.isLoaded) return null;
 
   return (
     <DumbPlayBar
-      songName='Valley Sunset'
-      authorName='Alejandro Magaña (A. M.)' // cspell:disable-line
+      songName={song.songName}
+      authorName={song.authorName}
       {...sound}
     />
   );
 }
 
-function useSound(source: AVPlaybackSource) {
+function useSound(source?: AVPlaybackSource) {
   const [sound, setSound] = useState<Audio.Sound>();
   const [status, setStatus] = useState<AVPlaybackStatus>({ isLoaded: false });
   const [slidingPosition, setSlidingPosition] = useState(0);
@@ -48,27 +45,37 @@ function useSound(source: AVPlaybackSource) {
       } else {
         await sound.playAsync();
       }
-    } else {
+    }
+  }
+
+  useEffect(() => {
+    if (!source) return;
+
+    (async () => {
       await Audio.setAudioModeAsync({
         staysActiveInBackground: true,
       }).catch(() => void 0);
 
       const { sound } = await Audio.Sound.createAsync(
         source,
-        undefined,
+        { shouldPlay: true },
         setStatus,
       );
       setSound(sound);
-
-      await sound.playAsync();
-    }
-  }
+    })();
+  }, [source]);
 
   useEffect(() => {
-    if (sound) () => sound.unloadAsync();
+    if (sound) {
+      return () => {
+        sound.unloadAsync();
+      };
+    }
   }, [sound]);
 
-  if (!sound || !status.isLoaded) return { isLoaded: false, onPlay } as const;
+  if (!sound || !status.isLoaded) {
+    return { isLoaded: false, onPlay } as const;
+  }
 
   const onSlidingStart = () => {
     isSliding.current = true;
