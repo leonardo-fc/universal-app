@@ -1,6 +1,6 @@
 import { TouchableOpacity } from 'react-native';
 
-import { Text, Background } from '../components/Themed';
+import { Text, Background } from './shared/Themed';
 import { RootStackScreenProps } from '../types';
 
 export default function NotFoundScreen({

@@ -40,7 +40,7 @@ const getStories = () => {
   return {
     "./src/components/PlayBar.stories.tsx": require("../src/components/PlayBar.stories.tsx"),
     "./src/components/SongsList.stories.tsx": require("../src/components/SongsList.stories.tsx"),
-    "./src/screens/App.stories.tsx": require("../src/screens/App.stories.tsx"),
+    "./src/components/App.stories.tsx": require("../src/components/App.stories.tsx"),
   };
 };
 

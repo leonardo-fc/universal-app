@@ -1,5 +1,5 @@
 import { FlatList, Pressable } from 'react-native';
-import { Background, Text } from './Themed';
+import { Background, Text } from '~/components/shared/Themed';
 
 type Song = {
   source?: unknown;

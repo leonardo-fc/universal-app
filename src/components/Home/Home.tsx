@@ -1,8 +1,8 @@
 import { AVPlaybackSource } from 'expo-av';
 import { useState } from 'react';
 import { View } from 'react-native';
-import PlayBar from '~/components/PlayBar';
-import SongsList from '~/components/SongsList';
+import PlayBar from './PlayBar';
+import SongsList from './SongsList';
 
 // cspell:ignore Magaña Ahjay Stelino
 const playlist: {
@@ -52,7 +52,7 @@ const playlist: {
   },
 ];
 
-export default function TabOneScreen() {
+export default function Home() {
   const [selected, setSelected] = useState<number | undefined>();
 
   return (

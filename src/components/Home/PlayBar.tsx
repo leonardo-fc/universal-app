@@ -1,7 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { View } from 'react-native';
 import { Audio, AVPlaybackSource, AVPlaybackStatus } from 'expo-av';
-import { Background, IconButton, Text, Slider } from '~/components/Themed';
+import {
+  Background,
+  IconButton,
+  Text,
+  Slider,
+} from '~/components/shared/Themed';
 import { lightFormat } from 'date-fns';
 
 type Song = {

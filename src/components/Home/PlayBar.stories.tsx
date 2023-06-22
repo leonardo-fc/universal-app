@@ -1,11 +1,12 @@
 import { withLightTheme, withDarkTheme } from '~/storybook/themes';
 import { minute, second } from '~/constants/time';
 import PlayBar, { DumbPlayBar } from './PlayBar';
+import { ComponentMeta } from '@storybook/react-native';
 
 export default {
   title: `components/${PlayBar.name}`,
   component: PlayBar,
-};
+} as ComponentMeta<typeof PlayBar>;
 
 const ShortName = () => (
   <DumbPlayBar

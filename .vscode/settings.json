@@ -4,5 +4,6 @@
     "*.tsx": "${capture}.stories.tsx, ${capture}.spec.ts",
     "tailwind.config.js": "tailwind.config.*.js"
   },
-  "tailwindCSS.classAttributes": ["tw", "className", "iconClassName"]
+  "tailwindCSS.classAttributes": ["tw", "className", "iconClassName"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

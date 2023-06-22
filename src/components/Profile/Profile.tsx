@@ -1,6 +1,6 @@
-import { Text, Background } from '../components/Themed';
+import { Text, Background } from '../shared/Themed';
 
-export default function TabTwoScreen() {
+export default function Profile() {
   return (
     <Background className='center'>
       <Text className='text-xl font-bold'>Tab Two</Text>

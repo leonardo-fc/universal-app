@@ -15,13 +15,13 @@ import { useColorScheme } from 'nativewind';
 import { ColorSchemeName } from 'nativewind/dist/style-sheet/color-scheme';
 import * as NavigationBar from 'expo-navigation-bar';
 
-import NotFoundScreen from '~/screens/NotFoundScreen';
-import TabOneScreen from '~/screens/TabOneScreen';
-import TabTwoScreen from '~/screens/TabTwoScreen';
+import NotFoundScreen from '~/components/NotFoundScreen';
+import Home from '~/components/Home/Home';
+import Profile from '~/components/Profile/Profile';
 import { RootStackParamList, RootTabParamList } from '~/types';
 import LinkingConfiguration from './Navigation.linking';
 import Device from '~/constants/Device';
-import { Icon } from '~/components/Themed';
+import { Icon } from '~/components/shared/Themed';
 
 export default function Navigation({
   colorScheme,
@@ -76,23 +76,21 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName='TabOne'
+      initialRouteName='Home'
       screenOptions={{
         tabBarActiveTintColor: colorScheme === 'dark' ? '#fff' : '#2f95dc',
       }}>
       <BottomTab.Screen
-        name='TabOne'
-        component={TabOneScreen}
+        name='Home'
+        component={Home}
         options={{
-          title: 'Home',
           tabBarIcon: createTabBarIcon('home'),
         }}
       />
       <BottomTab.Screen
-        name='TabTwo'
-        component={TabTwoScreen}
+        name='Profile'
+        component={Profile}
         options={{
-          title: 'Profile',
           tabBarIcon: createTabBarIcon('account'),
         }}
       />
