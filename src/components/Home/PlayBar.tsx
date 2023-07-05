@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import {
-  Background,
-  IconButton,
+  Card,
+  ClearIconButton,
   Text,
   Slider,
 } from '~/components/shared/Themed';
@@ -20,7 +20,7 @@ export default function PlayBar(p: { $song: Playback['$song'] }) {
 export function DumbPlayBar(
   p: SongPlaying & {
     slide: (v: AsyncIterable<number>) => void;
-  bottomPad?: boolean;
+    bottomPad?: boolean;
   },
 ) {
   const {
@@ -48,9 +48,9 @@ export function DumbPlayBar(
   )[status];
 
   return (
-    <Background
-      className={`absolute bottom-0 w-full bg-zinc-100 px-4 ${bottomPadClass} pt-3 dark:bg-zinc-900`}>
-      <View className='flex-row items-center justify-between'>
+    <Card
+      className={`${bottomPadClass} absolute bottom-0 w-full rounded-t-xl px-4 pt-2`}>
+      <View className='-mb-2 flex-row items-center justify-between'>
         <Text className='flex-shrink' numberOfLines={2}>
           <Text className='font-bold'>{songName}</Text> - {authorName}
         </Text>
@@ -59,7 +59,7 @@ export function DumbPlayBar(
           <Text className='w-24 text-right'>
             {formatSoundTime(position, duration)}
           </Text>
-          <IconButton name={iconName} onPress={play} className='ml-2' />
+          <ClearIconButton name={iconName} onPress={play} className='ml-2' />
         </View>
       </View>
 
@@ -68,12 +68,13 @@ export function DumbPlayBar(
         maximumValue={duration || 1}
         onSliding={slide}
         thumbStyle={{ width: 0 }}
-        thumbTintColor='#2196f3'
-        minimumTrackTintColor='#2196f3'
-        maximumTrackTintColor='rgba(64,64,64,0.5)'
+        thumbTintColor='rgb(34 197 94)'
+        minimumTrackTintColor='rgb(34 197 94)'
+        maximumTrackTintColor='rgba(64, 64, 64, 0.5)'
         className='mr-3 grow'
+        containerStyle={{ margin: 0 }}
       />
-    </Background>
+    </Card>
   );
 }
 

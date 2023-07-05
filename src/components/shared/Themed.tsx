@@ -9,23 +9,87 @@ import {
   ViewProps,
   Text as DefaultText,
   TextProps,
+  TextInput as DefaultTextInput,
+  TextInputProps,
   Button as DefaultButton,
   ButtonProps,
+  Switch as DefaultSwitch,
+  SwitchProps,
   TouchableOpacity,
   ViewStyle,
+  StyleProp,
 } from 'react-native';
 import MaterialCommunityIcon from '@expo/vector-icons/MaterialCommunityIcons';
 import { IconProps } from '@expo/vector-icons/build/createIconSet';
 import { Slider as DefaultSlider } from '@miblanchard/react-native-slider';
+import { Link as DefaultLink, useLinkTo } from '@react-navigation/native';
+import { WritableAtom, ReadableAtom } from 'nanostores';
+import { useStore } from '@nanostores/react';
+import { useColorScheme } from 'nativewind';
 import { useRef } from 'react';
 import { Observable } from '~/functions/observable';
 
+export type TwStyle = {
+  className?: string;
+  style?: StyleProp<ViewStyle>;
+};
+
 export function Background(props: ViewProps) {
-  return <View className='bg-white dark:bg-black' {...props} />;
+  return <View className='bg-[#fcfcfc] dark:bg-black' {...props} />;
+}
+
+export function Card(props: ViewProps) {
+  return <View className='bg-white shadow dark:bg-[#121212]' {...props} />;
 }
 
 export function Text(props: TextProps) {
-  return <DefaultText className='text-black dark:text-white' {...props} />;
+  return (
+    <DefaultText
+      className='text-neutral-800 dark:text-neutral-100'
+      {...props}
+    />
+  );
+}
+
+export function TextWithPlaceholder(
+  props: {
+    value: ReadableAtom<string>;
+    placeholder?: string;
+  } & Omit<TextProps, 'children'>,
+) {
+  const value = useStore(props.value);
+
+  return (
+    <Text className={value ? '' : 'opacity-[0.275]'} {...props}>
+      {value || (props.placeholder ?? '')}
+    </Text>
+  );
+}
+
+/**
+ * @default maxLength={300}
+ */
+export function TextInput(
+  props: {
+    value: WritableAtom<string>;
+  } & Omit<TextInputProps, 'value' | 'onChangeText'>,
+) {
+  const { colorScheme } = useColorScheme();
+  const value = useStore(props.value);
+
+  return (
+    <DefaultTextInput
+      maxLength={300}
+      className='text-neutral-900 dark:text-neutral-100'
+      placeholderTextColor={
+        // override because `multiline` mode breaks dark mode placeholder text color
+        colorScheme === 'dark' ? 'rgba(255,255,255,0.275)' : 'rgba(0,0,0,0.275)'
+      }
+      {...props}
+      value={value}
+      onChangeText={props.value.set}
+    />
+  );
 }
 
 export function Button({
@@ -39,30 +103,70 @@ export function Button({
   );
 }
 
-type MaterialCommunityIcons = keyof (typeof MaterialCommunityIcon)['glyphMap'];
-
-export function Icon(props: IconProps<MaterialCommunityIcons>) {
-  return <_Icon className='text-2xl dark:text-white' {...props} />;
-}
+export type IconsName = keyof (typeof MaterialCommunityIcon)['glyphMap'];
 
 // className is only working in wrappers of icon (tested in nativewind v2)
-function _Icon(props: IconProps<MaterialCommunityIcons>) {
-  return <MaterialCommunityIcon {...props} />;
+export function BaseIcon(props: IconProps<IconsName>) {
+  return <MaterialCommunityIcon size={24} {...props} />;
 }
 
-export function IconButton({
+export function Icon(props: IconProps<IconsName>) {
+  return (
+    <BaseIcon className='text-neutral-800 dark:text-neutral-200' {...props} />
+  );
+}
+
+export function ClearIconButton({
   onPress,
   style,
   iconClassName,
   ...props
-}: IconProps<MaterialCommunityIcons> & { iconClassName?: string }) {
+}: IconProps<IconsName> & { iconClassName?: string }) {
   return (
     <TouchableOpacity
-      className='aspect-square min-h-[32px] min-w-[32px] items-center justify-center'
-      style={style}
-      onPress={onPress}>
+      onPress={onPress}
+      className='aspect-square h-[48px] w-[48px] items-center justify-center rounded-full'
+      style={style}>
       <Icon className={iconClassName} {...props} />
     </TouchableOpacity>
+  );
+}
+
+export function IconButton(
+  props: React.ComponentProps<typeof ClearIconButton>,
+) {
+  return (
+    <ClearIconButton
+      className='bg-neutral-100 dark:bg-neutral-900'
+      {...props}
+    />
+  );
+}
+
+export function IconButtonWithText({
+  title,
+  style,
+  ...props
+}: React.ComponentProps<typeof IconButton> & {
+  title: string;
+}) {
+  return (
+    <View className='items-center gap-2' style={style}>
+      <IconButton {...props} />
+      <Text>{title}</Text>
+    </View>
+  );
+}
+
+export function Switch(
+  props: {
+    value: WritableAtom<boolean>;
+  } & Omit<SwitchProps, 'value' | 'onValueChange'>,
+) {
+  const value = useStore(props.value);
+
+  return (
+    <DefaultSwitch {...props} value={value} onValueChange={props.value.set} />
   );
 }
 
@@ -106,4 +210,13 @@ export function Slider({
 function getSliderValue(v: number | number[]) {
   return Array.isArray(v) ? v[0] ?? 0 : v;
 }
+
+export function Link(
+  props: ViewProps & {
+    to: React.ComponentProps<typeof DefaultLink>['to'];
+  },
+) {
+  const linkTo = useLinkTo();
+
+  return <TouchableOpacity onPress={() => linkTo(props.to)} {...props} />;
 }

@@ -28,7 +28,7 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
 
 export type RootTabParamList = {
   Home: undefined;
-  Profile: undefined;
+  ProfileTab: NavigatorScreenParams<ProfileTabParamList> | undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
@@ -36,3 +36,9 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackParamList>
   >;
+
+export type ProfileTabParamList = {
+  Profile: undefined;
+  EditProfile: undefined;
+  Settings: undefined;
+};
