@@ -7,7 +7,8 @@ const notchDecorator: DecoratorFunction<ReactNativeFramework> = (
   { story },
 ) => {
   return (
-    <Background className={`${story !== 'App' ? 'ios:pt-10' : ''} flex-1`}>
+    <Background
+      className={`${!story.startsWith('App ') ? 'ios:pt-10' : ''} flex-1`}>
       <Story />
     </Background>
   );
