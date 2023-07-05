@@ -1,3 +1,5 @@
+import { useStore } from '@nanostores/react';
+import { computed, ReadableAtom } from 'nanostores';
 import { FlatList, TouchableOpacity } from 'react-native';
 import { Background, Text } from '~/components/shared/Themed';
 import { Playback, Song } from '~/services/songs';
@@ -31,3 +33,26 @@ function SongsItem(p: { song: Song; onPress: () => void }) {
     </TouchableOpacity>
   );
 }
+
+/* function SongsItem(p: {
+  song: Song;
+  $isSelected: ReadableAtom<boolean>;
+  onPress: () => void;
+}) {
+  const isSelected = useStore(p.$isSelected);
+  const textColor = isSelected ? 'text-green-500' : '';
+
+  return (
+    <TouchableOpacity
+      onPress={p.onPress}
+      className='w-full flex-row items-center rounded p-4'>
+      <Icon name='music' className={`mr-2 ${textColor}`} />
+
+      <Text numberOfLines={2} className={`flex-shrink ${textColor}`}>
+        <Text className={`font-bold ${textColor}`}>{p.song.songName}</Text>
+        {' - '}
+        {p.song.authorName}
+      </Text>
+    </TouchableOpacity>
+  );
+} */
