@@ -17,6 +17,8 @@ import {
 import MaterialCommunityIcon from '@expo/vector-icons/MaterialCommunityIcons';
 import { IconProps } from '@expo/vector-icons/build/createIconSet';
 import { Slider as DefaultSlider } from '@miblanchard/react-native-slider';
+import { useRef } from 'react';
+import { Observable } from '~/functions/observable';
 
 export function Background(props: ViewProps) {
   return <View className='bg-white dark:bg-black' {...props} />;
@@ -69,8 +71,39 @@ type SliderProps = Omit<DefaultSlider['props'], keyof SliderDefaultProps> &
   Partial<Pick<DefaultSlider['props'], keyof SliderDefaultProps>>;
 
 export function Slider({
+  onSliding,
   style,
   ...props
-}: SliderProps & { className?: string; style?: ViewStyle }) {
-  return <DefaultSlider containerStyle={style} {...props} />;
+}: Omit<
+  SliderProps,
+  'onSlidingStart' | 'onValueChange' | 'onSlidingComplete'
+> & {
+  onSliding: (v: AsyncIterable<number>) => void;
+  className?: string;
+  style?: ViewStyle;
+}) {
+  const observable = useRef<Observable<number>>();
+
+  return (
+    <DefaultSlider
+      containerStyle={style}
+      onSlidingStart={async () => {
+        observable.current = new Observable();
+        onSliding(observable.current);
+      }}
+      onValueChange={(v) => {
+        observable.current?.next(getSliderValue(v));
+      }}
+      onSlidingComplete={(v) => {
+        observable.current?.final(getSliderValue(v));
+        observable.current = undefined;
+      }}
+      {...props}
+    />
+  );
+}
+
+function getSliderValue(v: number | number[]) {
+  return Array.isArray(v) ? v[0] ?? 0 : v;
+}
 }

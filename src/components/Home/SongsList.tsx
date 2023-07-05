@@ -1,34 +1,33 @@
-import { FlatList, Pressable } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 import { Background, Text } from '~/components/shared/Themed';
-
-type Song = {
-  source?: unknown;
-  songName: string;
-  authorName: string;
-};
+import { Playback, Song } from '~/services/songs';
 
 export default function SongsList(p: {
   playlist: Song[];
-  onSelect: (index: number) => void;
+  $selected: Playback['$selected'];
 }) {
   return (
     <Background className='flex-1'>
       <FlatList
         data={p.playlist}
-        renderItem={({ item, index }) =>
-          SongsItem(item, () => p.onSelect(index))
-        }
+        renderItem={({ item }) => (
+          <SongsItem song={item} onPress={() => p.$selected.set(item)} />
+        )}
       />
     </Background>
   );
 }
 
-function SongsItem(p: Song, onPress: () => void) {
+function SongsItem(p: { song: Song; onPress: () => void }) {
   return (
-    <Pressable onPress={onPress} className='row w-full p-4'>
-      <Text className='flex-shrink' numberOfLines={2}>
-        <Text className='font-bold'>{p.songName}</Text> - {p.authorName}
+    <TouchableOpacity
+      onPress={p.onPress}
+      className='w-full flex-row items-center rounded p-4'>
+      <Text numberOfLines={2} className={`flex-shrink`}>
+        <Text className={`font-bold`}>{p.song.songName}</Text>
+        {' - '}
+        {p.song.authorName}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }

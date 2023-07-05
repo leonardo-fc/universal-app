@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
 import { View } from 'react-native';
-import { Audio, AVPlaybackSource, AVPlaybackStatus } from 'expo-av';
 import {
   Background,
   IconButton,
@@ -8,142 +6,47 @@ import {
   Slider,
 } from '~/components/shared/Themed';
 import { lightFormat } from 'date-fns';
+import { useStore } from '@nanostores/react';
+import { Playback, SongPlaying } from '~/services/songs';
 
-type Song = {
-  source: AVPlaybackSource;
-  songName: string;
-  authorName: string;
-};
+export default function PlayBar(p: { $song: Playback['$song'] }) {
+  const song = useStore(p.$song);
 
-export default function PlayBar({ song }: { song?: Song }) {
-  const sound = useSound(song?.source);
+  if (!song) return null;
 
-  if (!song || !sound.isLoaded) return null;
-
-  return (
-    <DumbPlayBar
-      songName={song.songName}
-      authorName={song.authorName}
-      {...sound}
-    />
-  );
+  return <DumbPlayBar {...song} />;
 }
 
-function useSound(source?: AVPlaybackSource) {
-  const [sound, setSound] = useState<Audio.Sound>();
-  const [status, setStatus] = useState<AVPlaybackStatus>({ isLoaded: false });
-  const [slidingPosition, setSlidingPosition] = useState(0);
-  const wasPlaying = useRef(false);
-  const isSliding = useRef(false);
-
-  // better than `status.didJustFinish`
-  // because if you set position to the end but `shouldPlay` is false, `didJustFinish` remains false
-  const isFinish =
-    status.isLoaded && status.positionMillis === status.durationMillis;
-
-  async function onPlay() {
-    if (sound && status.isLoaded) {
-      if (isFinish) {
-        await sound.replayAsync();
-      } else if (status.isPlaying) {
-        await sound.pauseAsync();
-      } else {
-        await sound.playAsync();
-      }
-    }
-  }
-
-  useEffect(() => {
-    if (!source) return;
-
-    (async () => {
-      await Audio.setAudioModeAsync({
-        staysActiveInBackground: true,
-      }).catch(() => void 0);
-
-      const { sound } = await Audio.Sound.createAsync(
-        source,
-        { shouldPlay: true },
-        setStatus,
-      );
-      setSound(sound);
-    })();
-  }, [source]);
-
-  useEffect(() => {
-    if (sound) {
-      return () => {
-        sound.unloadAsync();
-      };
-    }
-  }, [sound]);
-
-  if (!sound || !status.isLoaded) {
-    return { isLoaded: false, onPlay } as const;
-  }
-
-  const onSlidingStart = () => {
-    isSliding.current = true;
-    wasPlaying.current = status.isPlaying;
-
-    if (wasPlaying.current) sound.pauseAsync();
-  };
-
-  const onSlidingComplete = () => {
-    isSliding.current = false;
-
-    if (wasPlaying.current) {
-      sound.playFromPositionAsync(slidingPosition);
-    } else {
-      sound.setPositionAsync(slidingPosition);
-    }
-  };
-
-  const positionToDisplay = isSliding.current
-    ? slidingPosition
-    : status.positionMillis;
-
-  return {
-    isLoaded: true,
-    isPlaying: status.isPlaying,
-    isFinish,
-    position: positionToDisplay,
-    duration: Number.isNaN(status.durationMillis) ? 0 : status.durationMillis, // initially returns NaN on web
-    onPlay,
-    onSlidingStart,
-    onSlidingComplete,
-    onPositionChange: setSlidingPosition,
-  } as const;
-}
-
-export function DumbPlayBar(p: {
-  songName: string;
-  authorName: string;
-  isPlaying?: boolean;
-  isFinish?: boolean;
-  position: number;
-  duration: number | undefined;
-  onPlay?: () => void;
-  onSlidingStart?: () => void;
-  onSlidingComplete?: () => void;
-  onPositionChange?: (ms: number) => void;
+export function DumbPlayBar(
+  p: SongPlaying & {
+    slide: (v: AsyncIterable<number>) => void;
   bottomPad?: boolean;
-}) {
+  },
+) {
   const {
     songName,
     authorName,
-    isPlaying,
-    isFinish,
-    position,
-    duration,
-    onPlay,
-    onSlidingStart,
-    onSlidingComplete,
-    onPositionChange,
+    $status,
+    $position,
+    $duration,
+    play,
+    slide,
     bottomPad,
   } = p;
 
+  const status = useStore($status);
+  const position = useStore($position);
+  const duration = useStore($duration);
+
   const bottomPadClass = bottomPad ? 'ios:pb-6' : '';
+  const iconName = (
+    {
+      playing: 'pause',
+      paused: 'play',
+      finished: 'replay',
+    } as const
+  )[status];
+
   return (
     <Background
       className={`absolute bottom-0 w-full bg-zinc-100 px-4 ${bottomPadClass} pt-3 dark:bg-zinc-900`}>
@@ -156,20 +59,14 @@ export function DumbPlayBar(p: {
           <Text className='w-24 text-right'>
             {formatSoundTime(position, duration)}
           </Text>
-          <IconButton
-            name={isFinish ? 'replay' : isPlaying ? 'pause' : 'play'}
-            onPress={onPlay}
-            className='ml-2'
-          />
+          <IconButton name={iconName} onPress={play} className='ml-2' />
         </View>
       </View>
 
       <Slider
         value={position}
         maximumValue={duration || 1}
-        onValueChange={(v) => onPositionChange?.(getSliderValue(v))}
-        onSlidingStart={onSlidingStart}
-        onSlidingComplete={onSlidingComplete}
+        onSliding={slide}
         thumbStyle={{ width: 0 }}
         thumbTintColor='#2196f3'
         minimumTrackTintColor='#2196f3'
@@ -180,12 +77,10 @@ export function DumbPlayBar(p: {
   );
 }
 
-function formatSoundTime(position: number, duration = 0) {
+function formatSoundTime(position: number | undefined, duration = 0) {
+  if (position == null) return '';
+
   const format = (n: number) => lightFormat(n, 'm:ss');
 
   return `${format(position)} / ${format(duration)}`;
-}
-
-function getSliderValue(v: number | number[]) {
-  return Array.isArray(v) ? v[0] ?? 0 : v;
 }

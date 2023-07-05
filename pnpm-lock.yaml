@@ -11,6 +11,9 @@ dependencies:
   '@miblanchard/react-native-slider':
     specifier: ^2.3.0
     version: 2.3.0(react-native@0.71.8)(react@18.2.0)
+  '@nanostores/react':
+    specifier: ^0.7.1
+    version: 0.7.1(nanostores@0.9.2)(react@18.2.0)
   '@react-navigation/bottom-tabs':
     specifier: ^6.0.5
     version: 6.5.7(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.5.0)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0)
@@ -53,6 +56,9 @@ dependencies:
   expo-system-ui:
     specifier: ~2.2.1
     version: 2.2.1(expo@48.0.6)
+  nanostores:
+    specifier: ^0.9.2
+    version: 0.9.2
   nativewind:
     specifier: ^2.0.11
     version: 2.0.11(react@18.2.0)(tailwindcss@3.2.7)
@@ -3196,6 +3202,17 @@ packages:
       call-me-maybe: 1.0.2
       glob-to-regexp: 0.3.0
     dev: true
+
+  /@nanostores/react@0.7.1(nanostores@0.9.2)(react@18.2.0):
+    resolution: {integrity: sha512-EXQg9N4MdI4eJQz/AZLIx3hxQ6BuBmV4Q55bCd5YCSgEOAW7tGTsIZxpRXxvxLXzflNvHTBvfrDNY38TlSVBkQ==}
+    engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0
+      react: '>=18.0.0'
+    dependencies:
+      nanostores: 0.9.2
+      react: 18.2.0
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
