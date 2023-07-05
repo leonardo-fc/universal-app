@@ -1,4 +1,5 @@
 {
+  "useGitignore": true,
   "files": [
     "**",
     "!pnpm-lock.yaml",
