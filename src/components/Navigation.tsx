@@ -22,9 +22,9 @@ import {
   RootStackParamList,
   RootTabParamList,
 } from '~/types';
-import LinkingConfiguration from './Navigation.linking';
 import Device from '~/constants/Device';
-import { BaseIcon, IconsName } from '~/components/shared/Themed';
+import LinkingConfiguration from './Navigation.linking';
+import { BaseIcon, IconsName, withSafeArea } from '~/components/shared/Themed';
 import Settings from './Profile/Settings';
 import EditProfile from './Profile/EditProfile';
 import { View } from 'react-native';
@@ -117,8 +117,8 @@ function ProfileTab() {
     <ProfileStack.Navigator>
       <ProfileStack.Screen
         name='Profile'
-        component={Profile}
-        options={{ header: () => <View className='ios:pt-10' /> }}
+        component={withSafeArea(Profile)}
+        options={{ headerShown: false }}
       />
       <ProfileStack.Screen
         name='EditProfile'

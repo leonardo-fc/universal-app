@@ -28,14 +28,31 @@ import { useStore } from '@nanostores/react';
 import { useColorScheme } from 'nativewind';
 import { useRef } from 'react';
 import { Observable } from '~/functions/observable';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Device from '~/constants/Device';
 
 export type TwStyle = {
   className?: string;
   style?: StyleProp<ViewStyle>;
 };
 
+export function withSafeArea(Component: () => JSX.Element) {
+  const SafeArea = () => (
+    <SafeAreaView className='flex-1'>
+      <Component />
+    </SafeAreaView>
+  );
+  return SafeArea;
+}
+
 export function Background(props: ViewProps) {
   return <View className='bg-[#fcfcfc] dark:bg-black' {...props} />;
+}
+
+export function SafeAreaBackground(props: ViewProps) {
+  return (
+    <SafeAreaView className='flex-1 bg-[#fcfcfc] dark:bg-black' {...props} />
+  );
 }
 
 export function Card(props: ViewProps) {

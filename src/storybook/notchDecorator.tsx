@@ -1,16 +1,20 @@
 import { DecoratorFunction } from '@storybook/csf';
 import { ReactNativeFramework } from '@storybook/react-native';
-import { Background } from '~/components/shared/Themed';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaBackground } from '~/components/shared/Themed';
 
 const notchDecorator: DecoratorFunction<ReactNativeFramework> = (
   Story,
   { story },
 ) => {
-  return (
-    <Background
-      className={`${!story.startsWith('App ') ? 'ios:pt-10' : ''} flex-1`}>
-      <Story />
-    </Background>
+  return story.startsWith('App ') ? (
+    <Story />
+  ) : (
+    <SafeAreaProvider>
+      <SafeAreaBackground>
+        <Story />
+      </SafeAreaBackground>
+    </SafeAreaProvider>
   );
 };
 
