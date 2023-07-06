@@ -27,7 +27,7 @@ import LinkingConfiguration from './Navigation.linking';
 import { BaseIcon, IconsName, withSafeArea } from '~/components/shared/Themed';
 import Settings from './Profile/Settings';
 import EditProfile from './Profile/EditProfile';
-import { View } from 'react-native';
+import SongDetails from './Home/SongDetails';
 
 const LightTheme = (() => {
   const theme = { ...DefaultTheme };
@@ -63,16 +63,22 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <RootStack.Navigator>
-      <RootStack.Screen
-        name='Root'
-        component={BottomTabNavigator}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name='NotFound'
-        component={NotFoundScreen}
-        options={{ title: 'Oops!' }}
-      />
+      <RootStack.Group>
+        <RootStack.Screen
+          name='Root'
+          component={BottomTabNavigator}
+          options={{ headerShown: false }}
+        />
+        <RootStack.Screen
+          name='NotFound'
+          component={NotFoundScreen}
+          options={{ title: 'Oops!' }}
+        />
+      </RootStack.Group>
+      <RootStack.Group
+        screenOptions={{ presentation: 'modal', headerShown: false }}>
+        <RootStack.Screen name='SongDetails' component={SongDetails} />
+      </RootStack.Group>
     </RootStack.Navigator>
   );
 }
@@ -86,7 +92,6 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
-      initialRouteName='Home'
       screenOptions={{
         tabBarActiveTintColor: 'rgb(22 163 74)',
       }}>

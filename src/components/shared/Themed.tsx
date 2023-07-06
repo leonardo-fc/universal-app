@@ -26,7 +26,7 @@ import { Link as DefaultLink, useLinkTo } from '@react-navigation/native';
 import { WritableAtom, ReadableAtom } from 'nanostores';
 import { useStore } from '@nanostores/react';
 import { useColorScheme } from 'nativewind';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Observable } from '~/functions/observable';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Device from '~/constants/Device';
@@ -142,7 +142,7 @@ export function ClearIconButton({
   return (
     <TouchableOpacity
       onPress={onPress}
-      className='aspect-square h-[48px] w-[48px] items-center justify-center rounded-full'
+      className='items-center justify-center rounded-full p-3'
       style={style}>
       <Icon className={iconClassName} {...props} />
     </TouchableOpacity>
@@ -224,7 +224,6 @@ export function Slider({
 
   return (
     <DefaultSlider
-      containerStyle={style}
       onSlidingStart={async () => {
         observable.current = new Observable();
         onSliding(observable.current);
@@ -236,6 +235,10 @@ export function Slider({
         observable.current?.final(getSliderValue(v));
         observable.current = undefined;
       }}
+      thumbStyle={{ width: 0 }}
+      minimumTrackTintColor='rgb(34 197 94)'
+      maximumTrackTintColor='rgba(64, 64, 64, 0.5)'
+      containerStyle={style}
       {...props}
     />
   );
@@ -253,4 +256,18 @@ export function Link(
   const linkTo = useLinkTo();
 
   return <TouchableOpacity onPress={() => linkTo(props.to)} {...props} />;
+}
+
+export function Redirect(
+  props: ViewProps & {
+    to: React.ComponentProps<typeof DefaultLink>['to'];
+  },
+) {
+  const linkTo = useLinkTo();
+
+  useEffect(() => {
+    linkTo(props.to);
+  }, [linkTo, props.to]);
+
+  return null;
 }

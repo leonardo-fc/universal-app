@@ -12,9 +12,9 @@ global.STORIES = [
   {
     titlePrefix: "",
     directory: "./src/components",
-    files: "*/*.stories.tsx",
+    files: "**/*.stories.tsx",
     importPathMatcher:
-      "^\\.[\\\\/](?:src\\/components\\/(?!\\.)(?=.)[^/]*?\\/(?!\\.)(?=.)[^/]*?\\.stories\\.tsx)$",
+      "^\\.[\\\\/](?:src\\/components(?:\\/(?!\\.)(?:(?:(?!(?:^|\\/)\\.).)*?)\\/|\\/|$)(?!\\.)(?=.)[^/]*?\\.stories\\.tsx)$",
   },
 ];
 
@@ -38,7 +38,9 @@ if (parameters) {
 
 const getStories = () => {
   return {
+    "./src/components/App.stories.tsx": require("../src/components/App.stories.tsx"),
     "./src/components/Home/PlayBar.stories.tsx": require("../src/components/Home/PlayBar.stories.tsx"),
+    "./src/components/Home/SongDetails.stories.tsx": require("../src/components/Home/SongDetails.stories.tsx"),
     "./src/components/Home/SongsList.stories.tsx": require("../src/components/Home/SongsList.stories.tsx"),
     "./src/components/Profile/EditProfile.stories.tsx": require("../src/components/Profile/EditProfile.stories.tsx"),
     "./src/components/Profile/Profile.stories.tsx": require("../src/components/Profile/Profile.stories.tsx"),

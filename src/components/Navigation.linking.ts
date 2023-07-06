@@ -25,6 +25,7 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
         },
       },
+      SongDetails: 'SongDetails',
       NotFound: '*',
     },
   },
