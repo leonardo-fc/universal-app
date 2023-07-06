@@ -20,6 +20,7 @@ export function DumbSongDetails(p: SongPlaying) {
   const status = useStore(p.$status);
   const position = useStore(p.$position);
   const duration = useStore(p.$duration);
+  const loop = useStore(p.$loop);
 
   const iconName = (
     {
@@ -58,7 +59,13 @@ export function DumbSongDetails(p: SongPlaying) {
         <Text>{formatTime(duration)}</Text>
       </View>
 
-      <View className='mt-4 flex-row items-center justify-center'>
+      <View className='mt-4 flex-row items-center justify-between'>
+        <ClearIconButton
+          onPress={p.toggleLoop}
+          name='sync'
+          size={42}
+          iconClassName={loop ? 'text-green-500' : ''}
+        />
         <ClearIconButton
           onPress={p.play}
           name={iconName}
@@ -66,6 +73,7 @@ export function DumbSongDetails(p: SongPlaying) {
           className='bg-neutral-900 dark:bg-white'
           iconClassName='text-white dark:text-black'
         />
+        <ClearIconButton name='share' size={42} className='opacity-0' />
       </View>
     </View>
   );

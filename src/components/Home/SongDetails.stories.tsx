@@ -15,6 +15,8 @@ const base = {
   $status: atom('paused'),
   $position: atom(0),
   $duration: atom(0),
+  $loop: atom(false),
+  toggleLoop: action('toggleLoop'),
   play: action('play'),
   slide: action('slide'),
 } satisfies Partial<ComponentProps<typeof DumbSongDetails>>;
@@ -64,3 +66,17 @@ const Replay = () => (
 );
 export const ReplayLight = withLightTheme(Replay);
 export const ReplayDark = withDarkTheme(Replay);
+
+const Looping = () => (
+  <DumbSongDetails
+    {...base}
+    songName='Creep'
+    authorName='Radiohead' // cspell:disable-line
+    $status={atom('playing')}
+    $position={atom(57 * second)}
+    $duration={atom(3 * minute + 58 * second)}
+    $loop={atom(true)}
+  />
+);
+export const LoopingLight = withLightTheme(Looping);
+export const LoopingDark = withDarkTheme(Looping);

@@ -66,6 +66,8 @@ export type SongPlaying = {
   $status: ReadableAtom<'playing' | 'paused' | 'finished'>;
   $position: ReadableAtom<number>;
   $duration: ReadableAtom<number | undefined>;
+  $loop: ReadableAtom<boolean>;
+  toggleLoop: () => void;
   play: () => void;
   slide: (v: AsyncIterable<number>) => void;
 };
@@ -79,8 +81,9 @@ export const playback = (() => {
   const $selected = atom<Song | undefined>();
 
   const $status = atom<'playing' | 'paused' | 'finished'>('paused');
-  const $position = atom<number>(0);
+  const $position = atom(0);
   const $duration = atom<number | undefined>(0);
+  const $loop = atom(false);
 
   const createSound = () => {
     const sound = new Audio.Sound();
@@ -95,6 +98,7 @@ export const playback = (() => {
         );
         $position.set(status.positionMillis);
         $duration.set(status.durationMillis);
+        $loop.set(status.isLooping);
       }
     });
     return sound;
@@ -141,6 +145,10 @@ export const playback = (() => {
       $status,
       $position,
       $duration,
+      $loop,
+      toggleLoop() {
+        sound.setIsLoopingAsync(!$loop.get());
+      },
       play() {
         if (!sound._loaded) return;
 
