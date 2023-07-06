@@ -10214,7 +10214,7 @@ exports[`Storyshots components/SongDetails Looping Dark 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -10230,7 +10230,7 @@ exports[`Storyshots components/SongDetails Looping Dark 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -10251,7 +10251,7 @@ exports[`Storyshots components/SongDetails Looping Dark 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -10624,7 +10624,7 @@ exports[`Storyshots components/SongDetails Looping Light 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -10640,7 +10640,7 @@ exports[`Storyshots components/SongDetails Looping Light 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -10661,7 +10661,7 @@ exports[`Storyshots components/SongDetails Looping Light 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -11034,7 +11034,7 @@ exports[`Storyshots components/SongDetails Name Long Dark 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -11050,7 +11050,7 @@ exports[`Storyshots components/SongDetails Name Long Dark 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -11071,7 +11071,7 @@ exports[`Storyshots components/SongDetails Name Long Dark 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -11444,7 +11444,7 @@ exports[`Storyshots components/SongDetails Name Long Light 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -11460,7 +11460,7 @@ exports[`Storyshots components/SongDetails Name Long Light 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -11481,7 +11481,7 @@ exports[`Storyshots components/SongDetails Name Long Light 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -11854,7 +11854,7 @@ exports[`Storyshots components/SongDetails Name Short Dark 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -11870,7 +11870,7 @@ exports[`Storyshots components/SongDetails Name Short Dark 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -11891,7 +11891,7 @@ exports[`Storyshots components/SongDetails Name Short Dark 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -12264,7 +12264,7 @@ exports[`Storyshots components/SongDetails Name Short Light 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -12280,7 +12280,7 @@ exports[`Storyshots components/SongDetails Name Short Light 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -12301,7 +12301,7 @@ exports[`Storyshots components/SongDetails Name Short Light 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -12674,7 +12674,7 @@ exports[`Storyshots components/SongDetails Playing Dark 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -12690,7 +12690,7 @@ exports[`Storyshots components/SongDetails Playing Dark 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -12711,7 +12711,7 @@ exports[`Storyshots components/SongDetails Playing Dark 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -13084,7 +13084,7 @@ exports[`Storyshots components/SongDetails Playing Light 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -13100,7 +13100,7 @@ exports[`Storyshots components/SongDetails Playing Light 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -13121,7 +13121,7 @@ exports[`Storyshots components/SongDetails Playing Light 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -13494,7 +13494,7 @@ exports[`Storyshots components/SongDetails Replay Dark 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -13510,7 +13510,7 @@ exports[`Storyshots components/SongDetails Replay Dark 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -13531,7 +13531,7 @@ exports[`Storyshots components/SongDetails Replay Dark 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>
@@ -13904,7 +13904,7 @@ exports[`Storyshots components/SongDetails Replay Light 1`] = `
       }
       accessible={true}
       collapsable={false}
-      focusable={false}
+      focusable={true}
       onClick={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -13920,7 +13920,7 @@ exports[`Storyshots components/SongDetails Replay Light 1`] = `
           "borderTopLeftRadius": 9999,
           "borderTopRightRadius": 9999,
           "justifyContent": "center",
-          "opacity": 0,
+          "opacity": 1,
           "paddingBottom": 12,
           "paddingLeft": 12,
           "paddingRight": 12,
@@ -13941,7 +13941,7 @@ exports[`Storyshots components/SongDetails Replay Light 1`] = `
           }
         }
       >
-        󰒖
+        󰒗
       </Text>
     </View>
   </View>

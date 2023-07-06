@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { lightFormat } from 'date-fns';
-import { View } from 'react-native';
+import { Share, View } from 'react-native';
 import Device from '~/constants/Device';
 import { playback, SongPlaying } from '~/services/songs';
 import {
@@ -10,13 +10,24 @@ import {
   Slider,
   ClearIconButton,
 } from '../shared/Themed';
+import { useRoute } from '@react-navigation/native';
 
 export default function SongDetails() {
   const song = useStore(playback.$song);
-  return song ? <DumbSongDetails {...song} /> : <Redirect to={'/Home'} />;
+  const { path } = useRoute();
+
+  return song ? (
+    <DumbSongDetails {...song} path={path} />
+  ) : (
+    <Redirect to={'/Home'} />
+  );
 }
 
-export function DumbSongDetails(p: SongPlaying) {
+export function DumbSongDetails(
+  p: SongPlaying & {
+    path?: string;
+  },
+) {
   const status = useStore(p.$status);
   const position = useStore(p.$position);
   const duration = useStore(p.$duration);
@@ -73,10 +84,26 @@ export function DumbSongDetails(p: SongPlaying) {
           className='bg-neutral-900 dark:bg-white'
           iconClassName='text-white dark:text-black'
         />
-        <ClearIconButton name='share' size={42} className='opacity-0' />
+        <ClearIconButton
+          onPress={() =>
+            Share.share({
+              title: `${p.songName} - ${p.authorName}`,
+              // mock impl
+              message: formatUrl(
+                `https://music.com${p.path}?song=${p.songName}-${p.authorName}`,
+              ),
+            })
+          }
+          name='share-variant'
+          size={42}
+        />
       </View>
     </View>
   );
+}
+
+function formatUrl(text: string) {
+  return text.toLowerCase().replaceAll(' ', '-');
 }
 
 function formatTime(time = 0) {
