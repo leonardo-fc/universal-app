@@ -1,11 +1,10 @@
 import { getStorybookUI } from '@storybook/react-native';
+import env from './env';
 
 import './storybook.requires';
 import '../src/nativewind';
 
-const isTest = process.env.NODE_ENV === 'test';
-
 export default getStorybookUI({
-  enableWebsockets: !isTest,
+  enableWebsockets: !env.isTest,
   onDeviceUI: false,
 });
