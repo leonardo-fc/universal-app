@@ -45,7 +45,7 @@ function Config(
           {p.description}
         </Text>
       </View>
-      <Switch value={p.$checked} />
+      <Switch $value={p.$checked} />
     </View>
   );
 }

@@ -158,15 +158,32 @@ export function IconButtonWithText({
   );
 }
 
-export function Switch(
-  props: {
-    value: WritableAtom<boolean>;
-  } & Omit<SwitchProps, 'value' | 'onValueChange'>,
-) {
-  const value = useStore(props.value);
+export function Switch({
+  $value,
+  ...props
+}: {
+  $value: WritableAtom<boolean>;
+} & Omit<SwitchProps, 'value' | 'onValueChange'>) {
+  const value = useStore($value);
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === 'dark';
 
   return (
-    <DefaultSwitch {...props} value={value} onValueChange={props.value.set} />
+    <DefaultSwitch
+      thumbColor={Device.android ? 'rgb(34, 197, 94)' : undefined}
+      trackColor={
+        Device.android
+          ? {
+              false: isDark ? 'rgb(48, 48, 48)' : 'rgb(220, 220, 220)',
+              true: isDark ? 'rgb(22, 101, 52)' : 'rgb(134 239 172)',
+            }
+          : undefined
+      }
+      className='text-green-300'
+      {...props}
+      value={value}
+      onValueChange={$value.set}
+    />
   );
 }
 

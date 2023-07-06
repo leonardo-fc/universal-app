@@ -12,6 +12,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: './src/assets/images/icon.png',
   scheme: 'demo',
   userInterfaceStyle: 'automatic',
+  primaryColor: 'rgb(34, 197, 94)',
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'contain',
