@@ -15,6 +15,7 @@ jest.mock('react-native-reanimated', () => ({
   runOnUI: (fn: unknown) => fn,
 }));
 
+// storyshots stops working easily
 initStoryshots({
   configPath: '.storybook_ondevice',
   renderer,
