@@ -17,9 +17,10 @@ export default function Profile() {
 
 export function DumbProfile(p: typeof $profile) {
   return (
-    <Background className='flex-1 p-6'>
-      <View className='mb-8 flex-row items-center gap-6 pl-6'>
+    <Background className='flex-1 p-6 pt-12'>
+      <View className='mb-10 flex-row items-center gap-6 pl-6'>
         <ProfilePhoto $photo={p.$photo} size={96} />
+
         <TextWithPlaceholder
           value={p.$name}
           placeholder='Anonymous'

@@ -6,7 +6,6 @@ import { useStore } from '@nanostores/react';
 export function ProfilePhoto(
   p: Pick<typeof $profile, '$photo'> & {
     size: number;
-    children?: React.ReactNode;
   } & TwStyle,
 ) {
   const photo = useStore(p.$photo);
@@ -27,7 +26,6 @@ export function ProfilePhoto(
           size={p.size + iconMargin}
         />
       )}
-      {p.children}
     </View>
   );
 }

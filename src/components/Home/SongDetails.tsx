@@ -74,13 +74,13 @@ export function DumbSongDetails(
         <ClearIconButton
           onPress={p.toggleLoop}
           name='sync'
-          size={42}
+          size={36}
           iconClassName={loop ? 'text-green-500' : ''}
         />
         <ClearIconButton
           onPress={p.play}
           name={iconName}
-          size={48}
+          size={44}
           className='bg-neutral-900 dark:bg-white'
           iconClassName='text-white dark:text-black'
         />
@@ -95,7 +95,7 @@ export function DumbSongDetails(
             })
           }
           name='share-variant'
-          size={42}
+          size={32}
         />
       </View>
     </View>

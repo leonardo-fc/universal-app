@@ -30,13 +30,15 @@ export function DumbEditProfile(p: EditProfile) {
   return (
     <>
       <Background className='flex-1 gap-6 p-6'>
-        <ProfilePhoto $photo={p.$photo} size={170} className='self-center'>
+        <View className='self-center'>
+          <ProfilePhoto $photo={p.$photo} size={170} />
           <IconButton
             name='camera'
             onPress={p.modal.open}
-            className='absolute right-0 bottom-0 shadow'
+            size={28}
+            className='absolute right-0 bottom-0 p-3.5 shadow'
           />
-        </ProfilePhoto>
+        </View>
 
         <TextInput
           value={p.$name}
