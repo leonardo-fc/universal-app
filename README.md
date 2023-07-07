@@ -1,8 +1,10 @@
-Music app demo.
+# Music app demo
 
-# Setup
+<https://github.com/leonardo-fc/universal-app/assets/124659450/f10386b9-cbb4-435d-8512-5b5b229fe77c>
 
-## Dev Container
+## Setup
+
+### Dev Container
 
 If you use [VS Code](https://code.visualstudio.com/), you can install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension.
 
@@ -10,16 +12,16 @@ Once installed you will be prompted to reopen the folder in a container. If you'
 
 Needs [Docker](https://www.docker.com/) installed.
 
-## Alternative
+### Alternative
 
-- Install Node version 16.
+- Install Node version 18.
 - Install [pnpm](https://pnpm.io/installation).
 - Run `pnpm install`.
 - (To run the Desktop app) Follow [Tauri setup](https://tauri.app/v1/guides/getting-started/prerequisites).
 
-# Run
+## Run
 
-## Mobile
+### Mobile
 
 Start Expo in the terminal, open the `Expo Go` ([Android](https://play.google.com/store/apps/details?id=host.exp.exponent), [iOS](https://apps.apple.com/app/expo-go/id982107779)) app on your phone and scan the QR code that appeared in the terminal.
 
@@ -27,7 +29,7 @@ Start Expo in the terminal, open the `Expo Go` ([Android](https://play.google.co
 pnpm start
 ```
 
-## Web
+### Web
 
 Start the web server and open in your browser the link that appeared in the terminal.
 
@@ -35,7 +37,7 @@ Start the web server and open in your browser the link that appeared in the term
 pnpm start:web
 ```
 
-## Desktop
+### Desktop
 
 This opens the app window.
 
@@ -43,7 +45,7 @@ This opens the app window.
 pnpm start:desktop
 ```
 
-## Storybook
+### Storybook
 
 Start the storybook dashboard and the app.
 
