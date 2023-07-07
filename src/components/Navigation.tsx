@@ -10,9 +10,9 @@ import {
   DefaultTheme,
   DarkTheme,
 } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ColorSchemeName } from 'nativewind/dist/style-sheet/color-scheme';
 import * as NavigationBar from 'expo-navigation-bar';
+import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 
 import NotFoundScreen from '~/components/NotFoundScreen';
 import Home from '~/components/Home/Home';
@@ -28,6 +28,7 @@ import { BaseIcon, IconsName, withSafeArea } from '~/components/shared/Themed';
 import Settings from './Profile/Settings';
 import EditProfile from './Profile/EditProfile';
 import SongDetails from './Home/SongDetails';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const LightTheme = (() => {
   const theme = { ...DefaultTheme };
@@ -58,27 +59,38 @@ export default function Navigation({
  * A root stack navigator is often used for displaying modals on top of all other content.
  * https://reactnavigation.org/docs/modal
  */
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createSharedElementStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
   return (
     <RootStack.Navigator>
-      <RootStack.Group>
-        <RootStack.Screen
-          name='Root'
-          component={BottomTabNavigator}
-          options={{ headerShown: false }}
-        />
-        <RootStack.Screen
-          name='NotFound'
-          component={NotFoundScreen}
-          options={{ title: 'Oops!' }}
-        />
-      </RootStack.Group>
-      <RootStack.Group
-        screenOptions={{ presentation: 'modal', headerShown: false }}>
-        <RootStack.Screen name='SongDetails' component={SongDetails} />
-      </RootStack.Group>
+      <RootStack.Screen
+        name='Root'
+        component={BottomTabNavigator}
+        options={{
+          title: 'Home',
+          headerShown: false,
+        }}
+      />
+      <RootStack.Screen
+        name='NotFound'
+        component={NotFoundScreen}
+        options={{ title: 'Oops!' }}
+      />
+
+      <RootStack.Screen
+        name='SongDetails'
+        component={SongDetails}
+        options={{
+          /* presentation: 'modal', */
+          title: 'Song',
+          headerTransparent: true,
+        }}
+        sharedElements={(route) => {
+          const { id } = route.params;
+          return [`item.${id}.song`];
+        }}
+      />
     </RootStack.Navigator>
   );
 }
@@ -115,7 +127,7 @@ function BottomTabNavigator() {
   );
 }
 
-const ProfileStack = createNativeStackNavigator<ProfileTabParamList>();
+const ProfileStack = createStackNavigator<ProfileTabParamList>();
 
 function ProfileTab() {
   return (

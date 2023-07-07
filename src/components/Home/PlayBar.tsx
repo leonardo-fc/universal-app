@@ -49,7 +49,7 @@ export function DumbPlayBar(
 
   return (
     <Card className={`${bottomPadClass} absolute bottom-0 w-full rounded-t-xl`}>
-      <Link to={'/SongDetails'} className='px-4 pt-2'>
+      <Link to={`/SongDetails?id=${p.songId}`} className='px-4 pt-2'>
         <View className='-mb-2 flex-row items-center justify-between'>
           <Text className='flex-shrink' numberOfLines={2}>
             <Text className='font-bold'>{songName}</Text> - {authorName}

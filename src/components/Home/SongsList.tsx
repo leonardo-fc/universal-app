@@ -1,7 +1,8 @@
 import { useStore } from '@nanostores/react';
 import { computed, ReadableAtom } from 'nanostores';
-import { FlatList, TouchableOpacity } from 'react-native';
-import { Background, Icon, Text } from '~/components/shared/Themed';
+import { FlatList, Image, TouchableOpacity } from 'react-native';
+import { SharedElement } from 'react-navigation-shared-element';
+import { Background, Text } from '~/components/shared/Themed';
 import { Playback, Song } from '~/services/songs';
 
 export default function SongsList(p: {
@@ -27,6 +28,9 @@ export default function SongsList(p: {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const listeningMusic = require('~/assets/images/listeningMusic.webp');
+
 function SongsItem(p: {
   song: Song;
   $isSelected: ReadableAtom<boolean>;
@@ -38,10 +42,19 @@ function SongsItem(p: {
   return (
     <TouchableOpacity
       onPress={p.onPress}
-      className='w-full flex-row items-center rounded p-4'>
-      <Icon name='music' className={`mr-2 ${textColor}`} />
+      className='w-full flex-row items-center rounded px-4 py-3'>
+      <SharedElement id={`item.${p.song.id}.song`}>
+        <Image
+          source={listeningMusic}
+          style={{
+            width: 32,
+            height: 32,
+          }}
+          className='rounded'
+        />
+      </SharedElement>
 
-      <Text numberOfLines={2} className={`flex-shrink ${textColor}`}>
+      <Text numberOfLines={2} className={`ml-2 flex-shrink ${textColor}`}>
         <Text className={`font-bold ${textColor}`}>{p.song.songName}</Text>
         {' - '}
         {p.song.authorName}

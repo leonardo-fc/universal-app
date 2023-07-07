@@ -61,6 +61,7 @@ export const playlist: Song[] = [
 ];
 
 export type SongPlaying = {
+  songId: string;
   songName: string;
   authorName: string;
   $status: ReadableAtom<'playing' | 'paused' | 'finished'>;
@@ -140,6 +141,7 @@ export const playback = (() => {
     load();
 
     return {
+      songId: song.id,
       songName: song.songName,
       authorName: song.authorName,
       $status,

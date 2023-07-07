@@ -26,6 +26,9 @@ dependencies:
   '@react-navigation/native-stack':
     specifier: ^6.1.0
     version: 6.9.12(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.5.0)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0)
+  '@react-navigation/stack':
+    specifier: ^6.3.17
+    version: 6.3.17(@react-navigation/native@6.1.6)(react-native-gesture-handler@2.9.0)(react-native-safe-area-context@4.5.0)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0)
   date-fns:
     specifier: ^2.29.3
     version: 2.29.3
@@ -89,9 +92,15 @@ dependencies:
   react-native-screens:
     specifier: ~3.20.0
     version: 3.20.0(react-native@0.71.8)(react@18.2.0)
+  react-native-shared-element:
+    specifier: 0.8.8
+    version: 0.8.8
   react-native-web:
     specifier: ~0.18.12
     version: 0.18.12(react-dom@18.2.0)(react@18.2.0)
+  react-navigation-shared-element:
+    specifier: ^3.1.3
+    version: 3.1.3(react-native-shared-element@0.8.8)(react-native@0.71.8)(react@18.2.0)
 
 devDependencies:
   '@babel/core':
@@ -100,9 +109,6 @@ devDependencies:
   '@babel/plugin-syntax-dynamic-import':
     specifier: ^7.8.3
     version: 7.8.3(@babel/core@7.21.0)
-  '@babel/plugin-transform-async-generator-functions':
-    specifier: ^7.22.5
-    version: 7.22.5(@babel/core@7.21.0)
   '@expo/ngrok':
     specifier: ^4.1.0
     version: 4.1.0
@@ -1014,21 +1020,6 @@ packages:
     dependencies:
       '@babel/core': 7.21.0
       '@babel/helper-plugin-utils': 7.22.5
-
-  /@babel/plugin-transform-async-generator-functions@7.22.5(@babel/core@7.21.0):
-    resolution: {integrity: sha512-gGOEvFzm3fWoyD5uZq7vVTD57pPJ3PczPUD/xCFGjzBpUosnklmXyKnGQbbbGs1NPNPskFex0j93yKbHt0cHyg==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-    dependencies:
-      '@babel/core': 7.21.0
-      '@babel/helper-environment-visitor': 7.22.5
-      '@babel/helper-plugin-utils': 7.22.5
-      '@babel/helper-remap-async-to-generator': 7.22.5(@babel/core@7.21.0)
-      '@babel/plugin-syntax-async-generators': 7.8.4(@babel/core@7.21.0)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
 
   /@babel/plugin-transform-async-to-generator@7.20.7(@babel/core@7.21.0):
     resolution: {integrity: sha512-Uo5gwHPT9vgnSXQxqGtpdufUiWp96gk7yiP4Mp5bm1QMkEmLXBO7PAGYbKoJ6DhAwiNkcHFBol/x5zZZkL/t0Q==}
@@ -3652,6 +3643,20 @@ packages:
       react-native-safe-area-context: 4.5.0(react-native@0.71.8)(react@18.2.0)
     dev: false
 
+  /@react-navigation/elements@1.3.18(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.5.0)(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-/0hwnJkrr415yP0Hf4PjUKgGyfshrvNUKFXN85Mrt1gY49hy9IwxZgrrxlh0THXkPeq8q4VWw44eHDfAcQf20Q==}
+    peerDependencies:
+      '@react-navigation/native': ^6.0.0
+      react: '*'
+      react-native: '*'
+      react-native-safe-area-context: '>= 3.0.0'
+    dependencies:
+      '@react-navigation/native': 6.1.6(react-native@0.71.8)(react@18.2.0)
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.0)(@babel/preset-env@7.20.2)(react@18.2.0)
+      react-native-safe-area-context: 4.5.0(react-native@0.71.8)(react@18.2.0)
+    dev: false
+
   /@react-navigation/native-stack@6.9.12(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.5.0)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0):
     resolution: {integrity: sha512-kS2zXCWP0Rgt7uWaCUKrRl7U2U1Gp19rM1kyRY2YzBPXhWGVPjQ2ygBp88CTQzjgy8M07H/79jvGiZ0mlEJI+g==}
     peerDependencies:
@@ -3688,6 +3693,27 @@ packages:
     resolution: {integrity: sha512-CEge+ZLhb1HBrSvv4RwOol7EKLW1QoqVIQlE9TN5MpxS/+VoQvP+cLbuz0Op53/iJfYhtXRFd1ZAd3RTRqto9w==}
     dependencies:
       nanoid: 3.3.4
+    dev: false
+
+  /@react-navigation/stack@6.3.17(@react-navigation/native@6.1.6)(react-native-gesture-handler@2.9.0)(react-native-safe-area-context@4.5.0)(react-native-screens@3.20.0)(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-8/8ZvJROK3fp6PRmQ9MrXd9epBowA8NkfCaWW/N9H5arqwNX9lTXAkmcjicRhjpX+UNlMBR9dTLkWvPRe2vY9A==}
+    peerDependencies:
+      '@react-navigation/native': ^6.0.0
+      react: '*'
+      react-native: '*'
+      react-native-gesture-handler: '>= 1.0.0'
+      react-native-safe-area-context: '>= 3.0.0'
+      react-native-screens: '>= 3.0.0'
+    dependencies:
+      '@react-navigation/elements': 1.3.18(@react-navigation/native@6.1.6)(react-native-safe-area-context@4.5.0)(react-native@0.71.8)(react@18.2.0)
+      '@react-navigation/native': 6.1.6(react-native@0.71.8)(react@18.2.0)
+      color: 4.2.3
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.0)(@babel/preset-env@7.20.2)(react@18.2.0)
+      react-native-gesture-handler: 2.9.0(react-native@0.71.8)(react@18.2.0)
+      react-native-safe-area-context: 4.5.0(react-native@0.71.8)(react@18.2.0)
+      react-native-screens: 3.20.0(react-native@0.71.8)(react@18.2.0)
+      warn-once: 0.1.1
     dev: false
 
   /@segment/loosely-validate-event@2.0.0:
@@ -15202,6 +15228,10 @@ packages:
       warn-once: 0.1.1
     dev: false
 
+  /react-native-shared-element@0.8.8:
+    resolution: {integrity: sha512-ZjnsI9IXckzX5CFl2lbVX8Izn93zBfYw6knUtW41NZ/HAPVq6wlFuSxAhvFNJ4HRZ3FX6b8gUMDYuUfX7djj0A==}
+    dev: false
+
   /react-native-swipe-gestures@1.0.5:
     resolution: {integrity: sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==}
     dev: true
@@ -15274,6 +15304,19 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+
+  /react-navigation-shared-element@3.1.3(react-native-shared-element@0.8.8)(react-native@0.71.8)(react@18.2.0):
+    resolution: {integrity: sha512-U1BZp7dEdcTNHggfkq3WEBlJeg4HwFhFdj7a0i0Uql/7mg2IHQg/bZaqM2jQvJITkABge6Hz5fZixIF8jyzpkg==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+      react-native-shared-element: '*'
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      react: 18.2.0
+      react-native: 0.71.8(@babel/core@7.21.0)(@babel/preset-env@7.20.2)(react@18.2.0)
+      react-native-shared-element: 0.8.8
+    dev: false
 
   /react-refresh@0.4.3:
     resolution: {integrity: sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA==}

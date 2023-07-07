@@ -1,33 +1,21 @@
 import { useStore } from '@nanostores/react';
 import { lightFormat } from 'date-fns';
-import { Share, View } from 'react-native';
+import { Image, Share, View } from 'react-native';
 import Device from '~/constants/Device';
 import { playback, SongPlaying } from '~/services/songs';
-import {
-  Text,
-  Icon,
-  Redirect,
-  Slider,
-  ClearIconButton,
-} from '../shared/Themed';
-import { useRoute } from '@react-navigation/native';
+import { Text, Redirect, Slider, ClearIconButton } from '../shared/Themed';
+import { SharedElement } from 'react-navigation-shared-element';
 
 export default function SongDetails() {
   const song = useStore(playback.$song);
-  const { path } = useRoute();
 
-  return song ? (
-    <DumbSongDetails {...song} path={path} />
-  ) : (
-    <Redirect to={'/Home'} />
-  );
+  return song ? <DumbSongDetails {...song} /> : <Redirect to={'/Home'} />;
 }
 
-export function DumbSongDetails(
-  p: SongPlaying & {
-    path?: string;
-  },
-) {
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const listeningMusic = require('~/assets/images/listeningMusic.webp');
+
+export function DumbSongDetails(p: SongPlaying) {
   const status = useStore(p.$status);
   const position = useStore(p.$position);
   const duration = useStore(p.$duration);
@@ -42,16 +30,19 @@ export function DumbSongDetails(
   )[status];
 
   return (
-    <View className='flex-1 p-6'>
-      <View className='mt-20 aspect-square w-full items-center justify-center self-center rounded-xl bg-neutral-900 dark:bg-white'>
-        <Icon
-          name='music'
-          size={Device.width * 0.7}
-          className='text-white dark:text-black'
+    <View className='flex-1 px-6 pt-40'>
+      <SharedElement id={`item.${p.songId}.song`}>
+        <Image
+          source={listeningMusic}
+          style={{
+            width: Device.width - 24 * 2,
+            height: Device.width - 24 * 2,
+          }}
+          className='rounded-xl'
         />
-      </View>
+      </SharedElement>
 
-      <View className='mt-16 flex-row items-center justify-between'>
+      <View className='mt-8 flex-row items-center justify-between'>
         <View className='flex-shrink gap-2'>
           <Text className='text-lg font-bold'>{p.songName}</Text>
           <Text>{p.authorName}</Text>
@@ -90,7 +81,7 @@ export function DumbSongDetails(
               title: `${p.songName} - ${p.authorName}`,
               // mock impl
               message: formatUrl(
-                `https://music.com${p.path}?song=${p.songName}-${p.authorName}`,
+                `https://music.com/song-details?song=${p.songName}-${p.authorName}`,
               ),
             })
           }
