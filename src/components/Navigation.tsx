@@ -105,7 +105,7 @@ function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: 'rgb(22 163 74)',
+        tabBarActiveTintColor: 'rgb(22, 163, 74)',
       }}>
       <BottomTab.Screen
         name='Home'

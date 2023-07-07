@@ -31,7 +31,7 @@ export function DumbSongDetails(p: SongPlaying) {
 
   return (
     <View className='flex-1 px-6 pt-40'>
-      <SharedElement id={`item.${p.songId}.song`}>
+      <MaybeSharedElement id={`item.${p.songId}.song`}>
         <Image
           source={listeningMusic}
           style={{
@@ -40,7 +40,7 @@ export function DumbSongDetails(p: SongPlaying) {
           }}
           className='rounded-xl'
         />
-      </SharedElement>
+      </MaybeSharedElement>
 
       <View className='mt-8 flex-row items-center justify-between'>
         <View className='flex-shrink gap-2'>
@@ -99,4 +99,10 @@ function formatUrl(text: string) {
 
 function formatTime(time = 0) {
   return lightFormat(time, 'm:ss');
+}
+
+function MaybeSharedElement(props: React.ComponentProps<typeof SharedElement>) {
+  if (Device.web) return <>{props.children}</>;
+
+  return <SharedElement {...props} />;
 }

@@ -187,14 +187,14 @@ export function Switch({
 
   return (
     <DefaultSwitch
-      thumbColor={Device.android ? 'rgb(34, 197, 94)' : undefined}
+      thumbColor={Device.ios ? undefined : 'rgb(34, 197, 94)'}
       trackColor={
-        Device.android
-          ? {
+        Device.ios
+          ? undefined
+          : {
               false: isDark ? 'rgb(48, 48, 48)' : 'rgb(220, 220, 220)',
               true: isDark ? 'rgb(22, 101, 52)' : 'rgb(134 239 172)',
             }
-          : undefined
       }
       className='text-green-300'
       {...props}
@@ -236,7 +236,7 @@ export function Slider({
         observable.current = undefined;
       }}
       thumbStyle={{ width: 0 }}
-      minimumTrackTintColor='rgb(34 197 94)'
+      minimumTrackTintColor='rgb(34, 197, 94)'
       maximumTrackTintColor='rgba(64, 64, 64, 0.5)'
       containerStyle={style}
       {...props}

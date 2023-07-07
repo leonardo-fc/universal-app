@@ -18,6 +18,7 @@ import BottomSheet, {
 import { useEffect } from 'react';
 import { useColorScheme } from 'nativewind';
 import { createModalStore, ModalStore } from '~/services/modal';
+import Device from '~/constants/Device';
 
 export default function EditProfile() {
   return <DumbEditProfile {...$profile} modal={createModalStore()} />;
@@ -34,7 +35,7 @@ export function DumbEditProfile(p: EditProfile) {
           <ProfilePhoto $photo={p.$photo} size={170} />
           <IconButton
             name='camera'
-            onPress={p.modal.open}
+            onPress={Device.web ? pickImage(p) : p.modal.open}
             size={28}
             className='absolute right-0 bottom-0 p-3.5 shadow'
           />
@@ -53,6 +54,9 @@ export function DumbEditProfile(p: EditProfile) {
 
 function PhotoModal(p: EditProfile) {
   const { colorScheme } = useColorScheme();
+
+  // @gorhom/bottom-sheet not working on web
+  if (Device.web) return null;
 
   return (
     <BottomSheet
@@ -79,18 +83,6 @@ function PhotoModalContent(p: EditProfile) {
     else bottomSheet.close();
   }, [bottomSheet, showModal]);
 
-  const pickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [1, 1],
-    });
-
-    if (!result.canceled) {
-      p.$photo.set(result.assets[0]);
-    }
-    p.modal.close();
-  };
   const deleteImage = () => {
     p.$photo.set(undefined);
     p.modal.close();
@@ -98,11 +90,24 @@ function PhotoModalContent(p: EditProfile) {
 
   return (
     <View className='flex-row gap-6 px-6'>
-      <IconButtonWithText title='Gallery' name='image' onPress={pickImage} />
+      <IconButtonWithText title='Gallery' name='image' onPress={pickImage(p)} />
       <IconButtonWithText title='Remove' name='delete' onPress={deleteImage} />
     </View>
   );
 }
+
+const pickImage = (p: EditProfile) => async () => {
+  const result = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ImagePicker.MediaTypeOptions.All,
+    allowsEditing: true,
+    aspect: [1, 1],
+  });
+
+  if (!result.canceled) {
+    p.$photo.set(result.assets[0]);
+  }
+  p.modal.close();
+};
 
 const renderBackdrop = (props: BottomSheetBackdropProps) => (
   <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />
